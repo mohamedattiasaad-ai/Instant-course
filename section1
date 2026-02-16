@@ -1,1 +1,155 @@
+low level language( is a type of programming language that is very close to the computer’s hardware and gives the programmer direct control over memory, CPU instructions, and system resources.      )
+{هي لغات برمجة قريبة من لغة zeco (0,1)}
+
+
+
+High level language(High-Level Programming Languages are programming languages that are closer to human language and easier to read, write, and understand.
+They allow programmers to write instructions without dealing directly with hardware details like memory or CPU operations.){ هي لغات برمجة قريبة من لغة الإنسان}
+💻 Examples
+
+Python
+
+Java
+
+C++
+
+JavaScript
+
+C#
+
+this language need to compiler and interpreter
+
+compiler:“It checks the code first. If there are no errors, it translates the code and saves a copy so it runs faster the second time compared to the interpreter.”
+💻 Examples
+( C ,C# ,C++,java,Go,swift )
+interpreter:“It translates the code line by line every time the program runs, (so the program is relatively slow).”
+💻 Examples
+( python)
+
+Programming :(means creating full software applications that can run independently.)
+Examples of what programming is used for:
+
+Desktop applications
+
+Mobile apps
+
+Game development
+
+System software
+
+Scripting:( usually means writing small programs that run inside another program or environment to automate tasks.)
+Examples of what scripting is used for:
+
+Automating tasks
+
+Web page behavior
+
+Server automation
+
+Data processing
+
+| Programming              | Scripting                            |
+| ------------------------ | ------------------------------------ |
+| Builds full applications | Automates or controls other programs |
+| Often compiled           | Usually interpreted                  |
+| Can run independently    | Often needs a host environment       |
+| Used for complex systems | Used for quick tasks and automation  |
+
+
+ Object-Oriented Programming (OOP) the language suport (oop)
+Classes – Objects – Inheritance – Encapsulation – Polymorphism
+💻 Examples
+Java
+C++
+C#
+Python
+Ruby
+Swift
+Kotlin
+JavaScript
+PHP
+
+the language not suport (oop)
+💻 Examples
+( C )
+
+
+ Main differences explained
+@( Float)
+
+Uses less memory
+
+Lower precision
+
+Faster calculations
+
+May cause rounding errors with very precise numbers
+
+% Used when performance is more important than accuracy.
+
+@( Double)
+
+More precise than float
+
+Standard choice for decimal numbers in most programs
+
+Still fast and efficient
+
+% Used for most real-number calculations.
+
+@( Decimal)
+
+Very high precision
+
+Stores numbers more exactly (especially base-10 values)
+
+Slower and uses more memory
+
+% Best for money, banking, accounting (no rounding mistakes).
+
+< Simple rule to remember>
+
+Float → small and fast, less accurate
+
+Double → more accurate, general purpose
+
+Decimal → extremely accurate, for money
+
+| Data Type   | Memory Size        | Precision                          | Speed     | Best Use                                                         |
+| ----------- | ------------------ | ---------------------------------- | --------- | ---------------------------------------------------------------- |
+| **Float**   | 4 bytes (32-bit)   | ~6–7 decimal digits                | Fast      | Graphics, games, scientific calculations (less precision needed) |
+| **Double**  | 8 bytes (64-bit)   | ~15–16 decimal digits              | Very fast | General scientific and engineering calculations                  |
+| **Decimal** | 16 bytes (128-bit) | Very high precision (28–29 digits) | Slower    | Financial and money calculations                                 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
