@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المحامون المتحدون - مكتب محاماة مصري</title>
+    <!-- ستايل الموقع -->
+    <style>
+        /* كل الصفحة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* الشريط العلوي */
+        .navbar {
+            background-color: #1a237e;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffd700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: #ffd700;
+        }
+        
+        .logo img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+            border-color: #ffc107;
+        }
+        
+        /* القسم الأول */
+        .hero {
+            background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(26, 35, 126, 0.95)),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,5 L95,50 L50,95 L5,50 Z" fill="none" stroke="%23ffd700" stroke-width="2"/><circle cx="50" cy="50" r="20" fill="none" stroke="%23ffd700" stroke-width="2"/><line x1="50" y1="30" x2="50" y2="70" stroke="%23ffd700" stroke-width="2"/><line x1="30" y1="50" x2="70" y2="50" stroke="%23ffd700" stroke-width="2"/></svg>');
+            background-size: 200px, cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* الأزرار */
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #1a237e;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ffc107;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* الأقسام */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a237e;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background-color: #ffd700;
+        }
+        
+        /* الخدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 5px solid #1a237e;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+        
+        /* الاستشارات */
+        .consultation-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* الكورسات */
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .course-header {
+            background-color: #1a237e;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .course-body {
+            padding: 1.5rem;
+        }
+        
+        .course-video {
+            width: 100%;
+            height: 200px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        /* الخدمات للمحامين */
+        .services-lawyers .service-card {
+            border-top: 5px solid #1a777e;
+        }
+        
+        /* الخدمات للأجانب */
+        .services-foreigners .service-card {
+            border-top: 5px solid #4c1a7e;
+        }
+        
+        /* لوحة التحكم */
+        .admin-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 3rem;
+            border-radius: 10px;
+        }
+        
+        .admin-panel {
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .admin-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #1a777e;
+        }
+        
+        /* القوانين */
+        .laws-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .accordion-btn {
+            width: 100%;
+            padding: 1.2rem;
+            text-align: right;
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-content {
+            padding: 1.5rem;
+            background-color: white;
+            display: none;
+        }
+        
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+        
+        /* الفوتر */
+        .footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* إحصائيات */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            min-width: 150px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: #1a237e;
+            font-weight: bold;
+        }
+        
+        /* إضافات */
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        .video-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* للجوال */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #1a237e;
+                width: 100%;
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .consultation-box {
+                padding: 2rem 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                padding: 0.5rem;
+                font-size: 0.85rem;
+            }
+            
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        /* للشاشات الصغيرة جدًا */
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.5rem;
+            }
+            
+            .logo h2 {
+                font-size: 1rem;
+            }
+            
+            .logo img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+    
+    <!-- أيقونات فونت أويسم -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- الشعار الجديد - الصورة -->
+                <img src="logo.png" alt="شعار المحامون المتحدون">
+                <h2 style="color: #ffd700;">المحامون المتحدون</h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#consultations">استشارات</a></li>
+                <li><a href="#courses">كورسات</a></li>
+                <li><a href="#services-lawyers">خدمات محامين</a></li>
+                <li><a href="#services-foreigners">خدمات أجانب</a></li>
+                <li><a href="#laws">قوانين</a></li>
+                <li><a href="#admin">لوحة التحكم</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>العدالة ليست مجرد شعار</h1>
+                <p>مكتب محاماة مصري يقدم خدمات قانونية متكاملة واستشارات احترافية</p>
+                <a href="#consultations" class="btn">احصل على استشارة مجانية</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- إحصائيات -->
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <p>سنوات خبرة</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <p>قضية ناجحة</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">1000+</div>
+            <p>عميل راضي</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <p>محامي متخصص</p>
+        </div>
+    </section>
+
+    <!-- الخدمات -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا القانونية</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>القضايا المدنية</h3>
+                    <p>نقاضي - تعويضات - منازعات عقارية - قضايا تجارية</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>القضايا الجنائية</h3>
+                    <p>دفاع في القضايا الجنائية - تحقيق - محاكمات</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>أحوال شخصية</h3>
+                    <p>طلاق - نفقة - حضانة - زيارة - خلع</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>صياغة العقود</h3>
+                    <p>عقود عمل - شركات - زواج - إيجار - بيع</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-landmark"></i>
+                    <h3>قضايا إدارية</h3>
+                    <p>منازعات مع الجهات الحكومية - قضايا تعيين</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>التسوية الودية</h3>
+                    <p>فض المنازعات خارج المحاكم - الصلح</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الاستشارات -->
+    <section id="consultations" class="consultations">
+        <div class="container">
+            <h2 class="section-title">الاستشارات القانونية</h2>
+            <div class="consultation-box">
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> تم إرسال استشارتك بنجاح! سنتواصل معك خلال 24 ساعة.
+                </div>
+                
+                <form id="consultationForm" onsubmit="submitConsultation(event)">
+                    <div class="form-group">
+                        <input type="text" id="clientName" placeholder="الاسم بالكامل" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="clientPhone" placeholder="رقم الهاتف" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="clientEmail" placeholder="البريد الإلكتروني (اختياري)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="consultationType" required>
+                            <option value="">اختر نوع الاستشارة</option>
+                            <option value="مدنية">قضية مدنية</option>
+                            <option value="جنائية">قضية جنائية</option>
+                            <option value="أسرة">أحوال شخصية</option>
+                            <option value="عقود">مراجعة عقد</option>
+                            <option value="تجارية">قضية تجارية</option>
+                            <option value="إدارية">قضية إدارية</option>
+                            <option value="أجانب">خدمات للأجانب</option>
+                            <option value="محامين">خدمات للمحامين</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="consultationDetails" placeholder="اشرح مشكلتك القانونية بالتفصيل..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> إرسال الاستشارة
+                    </button>
+                </form>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 5px;">
+                    <h4><i class="fas fa-info-circle"></i> معلومات مهمة:</h4>
+                    <p>✓ الرد خلال 24 ساعة عمل</p>
+                    <p>✓ سرية تامة للمعلومات</p>
+                    <p>✓ أسعار مناسبة للجميع</p>
+                    <p>✓ استشارات أونلاين أو في المكتب</p>
+                    <p>✓ خدمات بلغات متعددة (إنجليزي - فرنسي)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الكورسات -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">الكورسات القانونية</h2>
+            <div class="courses-container" id="coursesList">
+                <!-- الكورسات تظهر هنا -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>دورة القانون المدني</h3>
+                        <p>شهادة معتمدة</p>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-video">
+                            <i class="fas fa-play-circle" style="font-size: 3rem;"></i>
+                        </div>
+                        <p>شرح شامل للقانون المدني المصري واللوائح التنفيذية</p>
+                        <p class="price" style="color: #1a237e; font-weight: bold; margin: 1rem 0;">السعر: 500 جنيه</p>
+                        <button class="btn" style="width: 100%;">اشترك الآن</button>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>دورة القانون الجنائي</h3>
+                        <p>شهادة معتمدة</p>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-video">
+                            <i class="fas fa-play-circle" style="font-size: 3rem;"></i>
+                        </div>
+                        <p>أساسيات القانون الجنائي والإجراءات الجزائية</p>
+                        <p class="price" style="color: #1a237e; font-weight: bold; margin: 1rem 0;">السعر: 600 جنيه</p>
+                        <button class="btn" style="width: 100%;">اشترك الآن</button>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>دورة المحاماة العملية</h3>
+                        <p>للمحامين الجدد</p>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-video">
+                            <i class="fas fa-play-circle" style="font-size: 3rem;"></i>
+                        </div>
+                        <p>مهارات المحاماة العملية وإجراءات المحاكم</p>
+                        <p class="price" style="color: #1a237e; font-weight: bold; margin: 1rem 0;">السعر: 700 جنيه</p>
+                        <button class="btn" style="width: 100%;">اشترك الآن</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn" onclick="addCourse()">
+                    <i class="fas fa-plus"></i> إضافة كورس جديد (تجربة)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- الخدمات للمحامين -->
+    <section id="services-lawyers" class="services-lawyers">
+        <div class="container">
+            <h2 class="section-title">خدمات متخصصة للمحامين</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>الاشتراك في النقابة</h3>
+                    <p>مساعدتك في إجراءات الاشتراك في نقابة المحامين وتجديد الاشتراك السنوي</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>تجديد الترخيص</h3>
+                    <p>خدمات تجديد ترخيص مزاولة المهنة وإتمام الإجراءات القانونية</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>التدريب المستمر</h3>
+                    <p>برامج تدريبية معتمدة للحصول على ساعات التعليم المستمر المطلوبة</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>الشراكات المهنية</h3>
+                    <p>تسهيل إجراءات الشراكة بين المكاتب والمحامين وإنشاء مكاتب محاماة جديدة</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>الاستشارات المهنية</h3>
+                    <p>استشارات في آداب المهنة والمسؤولية القانونية للمحامين</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-book"></i>
+                    <h3>المكتبة القانونية</h3>
+                    <p>وصول إلى قاعدة بيانات قانونية شاملة وأحكام محاكم حديثة</p>
+                </div>
+            </div>
+            
+            <div style="background: #f0f8ff; padding: 2rem; border-radius: 10px; margin-top: 3rem;">
+                <h3 style="color: #1a237e; margin-bottom: 1rem;"><i class="fas fa-star"></i> مزايا خاصة للمحامين:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div>
+                        <h4 style="color: #1a777e;"><i class="fas fa-percentage"></i> خصومات خاصة:</h4>
+                        <p>خصم 20% على جميع الكورسات التدريبية</p>
+                        <p>خصم 15% على خدمات الصياغة القانونية</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #1a777e;"><i class="fas fa-calendar-alt"></i> فعاليات:</h4>
+                        <p>ورش عمل أسبوعية مجانية</p>
+                        <p>ندوات قانونية شهرية</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #1a777e;"><i class="fas fa-users"></i> مجتمع مهني:</h4>
+                        <p>انضم إلى مجتمع المحامين المتحدين</p>
+                        <p>تبادل الخبرات والفرص المهنية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الخدمات للأجانب -->
+    <section id="services-foreigners" class="services-foreigners">
+        <div class="container">
+            <h2 class="section-title">خدمات قانونية للأجانب في مصر</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-passport"></i>
+                    <h3>إقامات وعمل</h3>
+                    <p>تجديد الإقامات - تصاريح العمل - تحويل الإقامات - فيزا السياحة</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>تملك عقارات</h3>
+                    <p>استشارات في شراء وبيع العقارات للأجانب - التسجيل في الشهر العقاري</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>استثمار وشركات</h3>
+                    <p>تأسيس الشركات للأجانب - الاستثمار في مصر - القوانين الاستثمارية الجديدة</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>أحوال شخصية</h3>
+                    <p>زواج أجانب في مصر - قضايا الأسرة - الطلاق للأجانب - أحكام المحاكم</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-scale-balanced"></i>
+                    <h3>قضايا جنائية</h3>
+                    <p>تمثيل الأجانب في القضايا الجنائية - الترجمة القانونية - التواصل مع السفارات</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>تواصل بلغات متعددة</h3>
+                    <p>خدمات باللغة الإنجليزية - الفرنسية - الألمانية - الروسية - الصينية</p>
+                </div>
+            </div>
+            
+            <div style="background: #e8f4fc; padding: 2rem; border-radius: 10px; margin-top: 3rem;">
+                <h3 style="color: #1a237e; margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> معلومات مهمة للأجانب:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div>
+                        <h4 style="color: #1a777e;"><i class="fas fa-clock"></i> أوقات العمل:</h4>
+                        <p>مخصص للأجانب: السبت - الأربعاء: 10 ص - 6 م</p>
+                        <p>الخميس: 10 ص - 2 م</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #1a777e;"><i class="fas fa-phone"></i> خطوط اتصال دولية:</h4>
+                        <p>+20 100 123 4567</p>
+                        <p>+20 22 345 6789</p>
+                        <p>الدعم باللغة الإنجليزية: 16666</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #1a777e;"><i class="fas fa-envelope"></i> البريد الإلكتروني:</h4>
+                        <p>foreigners@mahama-masr.com</p>
+                        <p>support-en@mahama-masr.com</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1.5rem; padding: 1rem; background: #d1ecf1; border-radius: 5px;">
+                    <h4 style="color: #0c5460;"><i class="fas fa-lightbulb"></i> نصائح قانونية للأجانب:</h4>
+                    <p>• احتفظ بصورة من جواز سفرك وتأشيرتك دائماً</p>
+                    <p>• تأكد من صلاحية إقامتك قبل السفر خارج مصر</p>
+                    <p>• استشر محامياً قبل توقيع أي عقد باللغة العربية</p>
+                    <p>• تعرف على قوانين العمل المصرية إذا كنت تعمل في مصر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- معلومات قانونية -->
+    <section id="laws" class="laws">
+        <div class="container">
+            <h2 class="section-title">معلومات قانونية هامة</h2>
+            <div class="laws-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">
+                        القوانين المصرية الجديدة 2024
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <h4>أهم التعديلات التشريعية:</h4>
+                        <p>• قانون تنظيم الإيجار القديم الجديد</p>
+                        <p>• تعديلات قانون الأحوال الشخصية</p>
+                        <p>• قانون حماية البيانات الشخصية</p>
+                        <p>• قانون الاستثمار الجديد</p>
+                        <p>• قانون الجمعيات الأهلية</p>
+                        <p>• تعديلات قانون العمل</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">
+                        إجراءات رفع الدعوى
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <h4>خطوات رفع الدعوى القضائية:</h4>
+                        <p>1. تجهيز المستندات والأوراق المطلوبة</p>
+                        <p>2. صياغة صحيفة الدعوى بواسطة محامٍ</p>
+                        <p>3. دفع الرسوم القضائية في الخزينة</p>
+                        <p>4. تقديم الدعوى للمحكمة المختصة</p>
+                        <p>5. الحصول على رقم القضية وتاريخ الجلسة</p>
+                        <p>6. المتابعة مع المحكمة والخصم</p>
+                        <p>7. تنفيذ الحكم بعد صدوره</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">
+                        حقوق المواطن في الدستور
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <h4>أهم الحقوق الدستورية:</h4>
+                        <p>• الحق في المساواة وعدم التمييز</p>
+                        <p>• الحق في التقاضي على درجتين</p>
+                        <p>• حرية الرأي والتعبير</p>
+                        <p>• الحق في الملكية الخاصة</p>
+                        <p>• الحق في التعليم والصحة</p>
+                        <p>• الحق في العمل والضمان الاجتماعي</p>
+                        <p>• حرية الاعتقاد وممارسة الشعائر</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">
+                        قوانين خاصة بالأجانب
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <h4>القوانين المنظمة لوجود الأجانب في مصر:</h4>
+                        <p>• قانون الإقامة والهجرة رقم 89 لسنة 1960</p>
+                        <p>• قانون العمل المصري وتعديلاته</p>
+                        <p>• قوانين الاستثمار والشركات</p>
+                        <p>• قانون تملك الأجانب للعقارات</p>
+                        <p>• الاتفاقيات الدولية التي وقعتها مصر</p>
+                        <p>• قوانين الزواج والطلاق للأجانب</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- لوحة التحكم -->
+    <section id="admin" class="admin-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">لوحة تحكم الموقع</h2>
+            <div class="admin-panel">
+                <h3><i class="fas fa-cogs"></i> إدارة المحتوى</h3>
+                
+                <div class="admin-grid">
+                    <div class="admin-card">
+                        <h4><i class="fas fa-video"></i> إدارة الكورسات</h4>
+                        <p>تحميل فيديوهات جديدة - حذف كورسات</p>
+                        <div style="margin-top: 1rem;">
+                            <input type="text" id="newCourseTitle" placeholder="عنوان الكورس" style="width: 100%; margin-bottom: 0.5rem; padding: 0.5rem;">
+                            <input type="text" id="newCourseDesc" placeholder="وصف الكورس" style="width: 100%; margin-bottom: 0.5rem; padding: 0.5rem;">
+                            <input type="number" id="newCoursePrice" placeholder="السعر" style="width: 100%; margin-bottom: 0.5rem; padding: 0.5rem;">
+                            <select id="newCourseCategory" style="width: 100%; margin-bottom: 0.5rem; padding: 0.5rem;">
+                                <option value="عام">عام</option>
+                                <option value="محامين">للمحامين</option>
+                                <option value="أجانب">للأجانب</option>
+                            </select>
+                            <button class="btn" onclick="addNewCourse()" style="width: 100%;">
+                                <i class="fas fa-upload"></i> رفع كورس جديد
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <h4><i class="fas fa-comments"></i> الاستشارات الواردة</h4>
+                        <p>عدد الاستشارات: <span id="consultationCount">0</span></p>
+                        <p>استشارات الأجانب: <span id="foreignConsultations">0</span></p>
+                        <p>استشارات المحامين: <span id="lawyerConsultations">0</span></p>
+                        <button class="btn" onclick="viewConsultations()" style="width: 100%; margin-top: 1rem;">
+                            <i class="fas fa-eye"></i> عرض جميع الاستشارات
+                        </button>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <h4><i class="fas fa-chart-bar"></i> إحصائيات الموقع</h4>
+                        <p>زوار اليوم: <strong>47</strong></p>
+                        <p>استشارات هذا الشهر: <strong>128</strong></p>
+                        <p>إجمالي الكورسات: <strong id="totalCourses">3</strong></p>
+                        <p>المحامين المسجلين: <strong>24</strong></p>
+                        <p>عملاء أجانب: <strong>36</strong></p>
+                    </div>
+                </div>
+                
+                <div id="consultationsTable" style="margin-top: 2rem; display: none;">
+                    <h4>قائمة الاستشارات</h4>
+                    <div id="consultationsList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن المكتب</h3>
+                    <p>مكتب محاماة مصري متخصص، نقدم حلولاً قانونية مبتكرة ونعمل لتحقيق العدالة.</p>
+                    <p><i class="fas fa-award"></i> مرخص من نقابة المحامين المصريين</p>
+                    <p><i class="fas fa-clock"></i> ساعات العمل: 9 ص - 5 م</p>
+                    <p><i class="fas fa-language"></i> خدمات بلغات متعددة</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>معلومات التواصل</h3>
+                    <p><i class="fas fa-phone"></i> 0100-123-4567</p>
+                    <p><i class="fas fa-phone"></i> 022-345-6789</p>
+                    <p><i class="fas fa-phone"></i> للأجانب: 16666</p>
+                    <p><i class="fas fa-envelope"></i> info@mahama-masr.com</p>
+                    <p><i class="fas fa-envelope"></i> foreigners@mahama-masr.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 شارع العدالة، القاهرة، مصر</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <a href="#home">الرئيسية</a>
+                    <a href="#services">الخدمات</a>
+                    <a href="#consultations">استشارات</a>
+                    <a href="#courses">كورسات</a>
+                    <a href="#services-lawyers">خدمات محامين</a>
+                    <a href="#services-foreigners">خدمات أجانب</a>
+                    <a href="#laws">قوانين</a>
+                    <a href="#admin">لوحة التحكم</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>مواقع حكومية</h3>
+                    <a href="https://moj.gov.eg" target="_blank">وزارة العدل</a>
+                    <a href="https://ldf.gov.eg" target="_blank">مؤسسة التمويل القانوني</a>
+                    <a href="https://www.cc.gov.eg" target="_blank">المحكمة الدستورية</a>
+                    <a href="https://naa.org.eg" target="_blank">نقابة المحامين</a>
+                    <a href="https://www.investment.gov.eg" target="_blank">هيئة الاستثمار</a>
+                    <a href="https://www.moie.gov.eg" target="_blank">الهجرة واللاجئين</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 مكتب المحامون المتحدون - جميع الحقوق محفوظة | تم التصميم بخدمات قانونية مصرية</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                    <i class="fas fa-shield-alt"></i> معلوماتك محمية وسرية تماماً وفقاً لقانون حماية البيانات الشخصية المصري
+                </p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                    <i class="fas fa-globe"></i> هذا الموقع يدعم اللغات: العربية | English | Français
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- الجافاسكريبت -->
+    <script>
+        // 1. القائمة المتنقلة للجوال
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+        
+        // 2. الأكورديون
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+            
+            const icon = button.querySelector('i');
+            if (item.classList.contains('active')) {
+                icon.className = 'fas fa-chevron-up';
+            } else {
+                icon.className = 'fas fa-chevron-down';
+            }
+        }
+        
+        // 3. إرسال الاستشارة
+        function submitConsultation(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const email = document.getElementById('clientEmail').value;
+            const type = document.getElementById('consultationType').value;
+            const details = document.getElementById('consultationDetails').value;
+            
+            // تحديد إذا كانت استشارة أجنبي أو محامي
+            let category = 'عام';
+            if (type === 'أجانب') category = 'أجانب';
+            if (type === 'محامين') category = 'محامين';
+            
+            // حفظ في المتصفح
+            const consultation = {
+                id: Date.now(),
+                name: name,
+                phone: phone,
+                email: email || 'لا يوجد',
+                type: type,
+                category: category,
+                details: details,
+                date: new Date().toLocaleString('ar-EG'),
+                status: 'جديدة'
+            };
+            
+            // تخزين في localStorage
+            let consultations = JSON.parse(localStorage.getItem('lawConsultations')) || [];
+            consultations.push(consultation);
+            localStorage.setItem('lawConsultations', JSON.stringify(consultations));
+            
+            // تحديث العداد
+            updateConsultationCount();
+            
+            // إظهار رسالة النجاح
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // تفريغ النموذج
+            document.getElementById('consultationForm').reset();
+            
+            // إخفاء الرسالة بعد 5 ثواني
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        }
+        
+        // 4. إضافة كورس جديد (تجربة)
+        function addCourse() {
+            const coursesList = document.getElementById('coursesList');
+            
+            const newCourse = document.createElement('div');
+            newCourse.className = 'course-card';
+            newCourse.innerHTML = `
+                <div class="course-header">
+                    <h3>كورس جديد</h3>
+                    <p>تم إضافته للتو</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-video">
+                        <i class="fas fa-video" style="font-size: 3rem;"></i>
+                    </div>
+                    <p>وصف للكورس الجديد</p>
+                    <p class="price" style="color: #1a237e; font-weight: bold; margin: 1rem 0;">السعر: 400 جنيه</p>
+                    <div class="video-actions">
+                        <button class="btn" style="flex: 1;">مشاهدة</button>
+                        <button class="delete-btn" onclick="deleteCourse(this)">حذف</button>
+                    </div>
+                </div>
+            `;
+            
+            coursesList.appendChild(newCourse);
+            
+            // تحديث العداد
+            document.getElementById('totalCourses').textContent = 
+                document.querySelectorAll('.course-card').length;
+            
+            alert('تم إضافة كورس تجريبي بنجاح!');
+        }
+        
+        // 5. إضافة كورس من لوحة التحكم
+        function addNewCourse() {
+            const title = document.getElementById('newCourseTitle').value;
+            const desc = document.getElementById('newCourseDesc').value;
+            const price = document.getElementById('newCoursePrice').value;
+            const category = document.getElementById('newCourseCategory').value;
+            
+            if (!title || !desc || !price) {
+                alert('من فضلك املأ جميع الحقول');
+                return;
+            }
+            
+            const coursesList = document.getElementById('coursesList');
+            
+            const newCourse = document.createElement('div');
+            newCourse.className = 'course-card';
+            newCourse.innerHTML = `
+                <div class="course-header">
+                    <h3>${title}</h3>
+                    <p>${category === 'محامين' ? 'للمحامين' : category === 'أجانب' ? 'للأجانب' : 'كورس عام'}</p>
+                </div>
+                <div class="course-body">
+                    <div class="course-video">
+                        <i class="fas fa-video" style="font-size: 3rem;"></i>
+                    </div>
+                    <p>${desc}</p>
+                    <p class="price" style="color: #1a237e; font-weight: bold; margin: 1rem 0;">السعر: ${price} جنيه</p>
+                    <div class="video-actions">
+                        <button class="btn" style="flex: 1;">اشترك الآن</button>
+                        <button class="delete-btn" onclick="deleteCourse(this)">حذف</button>
+                    </div>
+                </div>
+            `;
+            
+            coursesList.appendChild(newCourse);
+            
+            // تحديث العداد
+            document.getElementById('totalCourses').textContent = 
+                document.querySelectorAll('.course-card').length;
+            
+            // تفريغ الحقول
+            document.getElementById('newCourseTitle').value = '';
+            document.getElementById('newCourseDesc').value = '';
+            document.getElementById('newCoursePrice').value = '';
+            
+            alert(`تم إضافة كورس "${title}" بنجاح!`);
+        }
+        
+        // 6. حذف كورس
+        function deleteCourse(button) {
+            if (confirm('هل تريد حذف هذا الكورس؟')) {
+                const courseCard = button.closest('.course-card');
+                courseCard.remove();
+                
+                // تحديث العداد
+                document.getElementById('totalCourses').textContent = 
+                    document.querySelectorAll('.course-card').length;
+            }
+        }
+        
+        // 7. تحديث عداد الاستشارات
+        function updateConsultationCount() {
+            const consultations = JSON.parse(localStorage.getItem('lawConsultations')) || [];
+            document.getElementById('consultationCount').textContent = consultations.length;
+            
+            // عد استشارات الأجانب
+            const foreignConsultations = consultations.filter(c => c.category === 'أجانب').length;
+            document.getElementById('foreignConsultations').textContent = foreignConsultations;
+            
+            // عد استشارات المحامين
+            const lawyerConsultations = consultations.filter(c => c.category === 'محامين').length;
+            document.getElementById('lawyerConsultations').textContent = lawyerConsultations;
+        }
+        
+        // 8. عرض الاستشارات
+        function viewConsultations() {
+            const consultations = JSON.parse(localStorage.getItem('lawConsultations')) || [];
+            const container = document.getElementById('consultationsList');
+            const table = document.getElementById('consultationsTable');
+            
+            if (consultations.length === 0) {
+                container.innerHTML = '<p style="padding: 1rem; background: #f8f9fa; border-radius: 5px;">لا توجد استشارات بعد</p>';
+            } else {
+                let html = '<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse;">';
+                html += '<tr style="background: #1a237e; color: white;">';
+                html += '<th style="padding: 0.8rem; text-align: right;">الاسم</th>';
+                html += '<th style="padding: 0.8rem; text-align: right;">الهاتف</th>';
+                html += '<th style="padding: 0.8rem; text-align: right;">النوع</th>';
+                html += '<th style="padding: 0.8rem; text-align: right;">الفئة</th>';
+                html += '<th style="padding: 0.8rem; text-align: right;">التاريخ</th>';
+                html += '<th style="padding: 0.8rem; text-align: right;">حذف</th>';
+                html += '</tr>';
+                
+                consultations.forEach((consult, index) => {
+                    // تحديد لون الصف حسب الفئة
+                    let rowColor = index % 2 === 0 ? '#f9f9f9' : 'white';
+                    if (consult.category === 'أجانب') rowColor = '#e8f4fc';
+                    if (consult.category === 'محامين') rowColor = '#f0f8ff';
+                    
+                    html += `<tr style="border-bottom: 1px solid #ddd; background: ${rowColor}">`;
+                    html += `<td style="padding: 0.8rem;">${consult.name}</td>`;
+                    html += `<td style="padding: 0.8rem;">${consult.phone}</td>`;
+                    html += `<td style="padding: 0.8rem;">${consult.type}</td>`;
+                    html += `<td style="padding: 0.8rem;">${consult.category === 'أجانب' ? 'أجنبي' : consult.category === 'محامين' ? 'محامي' : 'عام'}</td>`;
+                    html += `<td style="padding: 0.8rem;">${consult.date}</td>`;
+                    html += `<td style="padding: 0.8rem;"><button class="delete-btn" onclick="deleteConsultation(${consult.id})">حذف</button></td>`;
+                    html += '</tr>';
+                });
+                
+                html += '</table></div>';
+                container.innerHTML = html;
+            }
+            
+            table.style.display = 'block';
+        }
+        
+        // 9. حذف استشارة
+        function deleteConsultation(id) {
+            if (confirm('هل تريد حذف هذه الاستشارة؟')) {
+                let consultations = JSON.parse(localStorage.getItem('lawConsultations')) || [];
+                consultations = consultations.filter(c => c.id !== id);
+                localStorage.setItem('lawConsultations', JSON.stringify(consultations));
+                
+                updateConsultationCount();
+                viewConsultations();
+            }
+        }
+        
+        // 10. عند تحميل الصفحة
+        window.addEventListener('DOMContentLoaded', function() {
+            // تحديث العداد
+            updateConsultationCount();
+            
+            // تحديث عدد الكورسات
+            document.getElementById('totalCourses').textContent = 
+                document.querySelectorAll('.course-card').length;
+            
+            // إخفاء رسالة النجاح
+            document.getElementById('successMessage').style.display = 'none';
+            
+            // إخفاء جدول الاستشارات
+            document.getElementById('consultationsTable').style.display = 'none';
+            
+            // تخزين أولي للبيانات إذا لم تكن موجودة
+            if (!localStorage.getItem('lawConsultations')) {
+                const initialData = [
+                    {
+                        id: 1,
+                        name: 'أحمد محمد',
+                        phone: '01001234567',
+                        email: 'ahmed@example.com',
+                        type: 'مدنية',
+                        category: 'عام',
+                        details: 'أريد استشارة في قضية تعويض',
+                        date: '2024-01-15 10:30',
+                        status: 'مكتملة'
+                    },
+                    {
+                        id: 2,
+                        name: 'فاطمة علي',
+                        phone: '01112223344',
+                        email: 'fatima@example.com',
+                        type: 'أسرة',
+                        category: 'عام',
+                        details: 'استشارة في قضية حضانة',
+                        date: '2024-01-14 14:20',
+                        status: 'جديدة'
+                    },
+                    {
+                        id: 3,
+                        name: 'John Smith',
+                        phone: '01009876543',
+                        email: 'john@example.com',
+                        type: 'أجانب',
+                        category: 'أجانب',
+                        details: 'I need help with residency renewal',
+                        date: '2024-01-13 11:15',
+                        status: 'جديدة'
+                    },
+                    {
+                        id: 4,
+                        name: 'محمد المحامي',
+                        phone: '01005556677',
+                        email: 'lawyer@example.com',
+                        type: 'محامين',
+                        category: 'محامين',
+                        details: 'أحتاج مساعدة في تجديد ترخيص النقابة',
+                        date: '2024-01-12 16:45',
+                        status: 'قيد المعالجة'
+                    }
+                ];
+                localStorage.setItem('lawConsultations', JSON.stringify(initialData));
+                updateConsultationCount();
+            }
+        });
+        
+        // 11. الانتقال السلس بين الأقسام
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+
+                // إغلاق القائمة إذا كانت مفتوحة (للجوال)
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // 12. إظهار رسالة ترحيب عند الدخول لأقسام الأجانب
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash;
+            if (hash === '#services-foreigners') {
+                setTimeout(() => {
+                    alert('Welcome to our services for foreigners!\n\nWe provide legal services in multiple languages.\nFor English support, call: 16666');
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
