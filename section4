@@ -1,0 +1,47 @@
+Question: How do you track a specific character in a single string?
+This means finding its position, counting how many times it appears, or locating all positions where it occurs.
+
+Here is a simple explanation using Python 
+
+1@ Find the first occurrence of the character
+
+Use find()
+
+text = "hello world"
+print(text.find("o"))
+
+ Output: 4
+Because the first o is at index 4.
+ If the character is not found → returns -1.
+
+2@ Count how many times the character appears
+
+Use count()
+
+text = "hello world"
+print(text.count("o"))
+
+ Output: 2
+Because the letter o appears twice.
+
+3@ Find all positions of the character
+
+Use a for loop
+
+text = "hello world"
+
+for i in range(len(text)):
+    if text[i] == "o":
+        print(i)
+
+ Output:
+
+4
+7
+ Key idea
+
+A string is a sequence of characters,
+and each character has an index (position) starting from 0.
+
+h e l l o   w o r l d
+0 1 2 3 4 5 6 7 8 9 10
