@@ -1,0 +1,114 @@
+🖨️ print()
+
+التعريف: طباعة بيانات على الشاشة.
+
+print("Hello World")
+⌨️ input()
+
+التعريف: إدخال بيانات من المستخدم.
+
+name = input("Enter your name: ")
+print(name)
+🧾 f-string
+
+التعريف: تنسيق النص وإدخال متغيرات داخله.
+
+name = "Mohamed"
+print(f"My name is {name}")
+🔍 type()
+
+التعريف: معرفة نوع المتغير.
+
+x = 10
+print(type(x))
+➕➖✖️➗ العمليات الحسابية
+print(5 + 3)   # Sum
+print(10 - 2)  # Difference
+print(4 * 3)   # Product
+print(8 / 2)   # Division
+🔗 Concatenation
+
+دمج نصين
+
+print("Hello " + "World")
+📏 len()
+text = "Python"
+print(len(text))
+🔢 count()
+text = "banana"
+print(text.count("a"))
+🔍 find()
+text = "I love Python"
+print(text.find("love"))   # بيرجع index
+print(text.find("Java"))   # -1
+الفرق بين find() و index()
+
+find() → يرجع -1 لو مش لاقي
+
+index() → يعمل Error لو مش لاقي
+
+✂️ SLICING 🔥 (مهم جدًا)
+text = "PythonProgramming"
+✅ من الأول
+print(text[:6])      # Python
+✅ من رقم معين للآخر
+print(text[6:])      # Programming
+✅ جزء من النص (في النص)
+print(text[3:9])     # honPro
+✅ آخر 3 حروف
+print(text[-3:])     # ing
+✅ من الأول للآخر
+print(text[:])
+✅ Reverse (عكس النص)
+print(text[::-1])
+✅ خطوة 2 (كل حرفين)
+print(text[::2])
+🔠 upper() و lower()
+print("python".upper())
+print("PYTHON".lower())
+🔤 capitalize() vs title()
+print("python language".capitalize())
+print("python language".title())
+الفرق:
+
+capitalize() → أول حرف في النص بس
+
+title() → أول حرف في كل كلمة
+
+▶️ startswith() vs endswith()
+text = "Python"
+print(text.startswith("Py"))
+print(text.endswith("on"))
+🧹 strip() vs lstrip() vs rstrip()
+text = "  hello  "
+print(text.strip())    # يمين وشمال
+print(text.lstrip())   # شمال فقط
+print(text.rstrip())   # يمين فقط
+🔀 split()
+text = "I love Python"
+print(text.split())
+
+text2 = "apple,banana,orange"
+print(text2.split(","))
+🔗 join()
+words = ["I", "love", "Python"]
+print(" ".join(words))
+print("-".join(words))
+الفرق بين split و join:
+
+split() → يحول String → List
+
+join() → يحول List → String
+
+🔄 replace()
+text = "I love Python"
+print(text.replace("Python", "AI"))
+📌 مثال شامل صغير يجمع شوية مع بعض
+text = "  I love Python Programming  "
+
+print(text.strip())
+print(text.upper())
+print(text.count("o"))
+print(text.find("Python"))
+print(text[2:10])
+print(text[::-1])
