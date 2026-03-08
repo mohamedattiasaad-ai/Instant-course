@@ -1,0 +1,14 @@
+rows = 9
+columns = 11
+
+for i in range(rows):
+    for x in range(columns):
+        if i == 0 or i == rows-1 or x == 0 or x == columns-1 or x ==columns//2  :
+            print("*", end="")
+         
+
+
+        else:    
+            print(" ",end="")
+        
+    print()
