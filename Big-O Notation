@@ -1,0 +1,124 @@
+What is Big-O Notation
+
+Big-O notation describes the performance or complexity of an algorithm.
+It specifically describes the worst-case scenario and tells us how the running time grows as the input size grows.
+
+Common Big-O Complexity Classes
+
+O(1) → Constant Time
+O(log n) → Logarithmic Time
+O(n) → Linear Time
+O(n log n) → Linearithmic Time
+O(n²) → Quadratic Time
+O(2ⁿ) → Exponential Time
+O(n!) → Factorial Time
+
+Data Structure Operations
+Array
+
+Access → O(1)
+Search → O(n)
+Insertion → O(n)
+Deletion → O(n)
+
+Stack
+
+Access → O(n)
+Search → O(n)
+Insertion (Push) → O(1)
+Deletion (Pop) → O(1)
+
+Queue
+
+Access → O(n)
+Search → O(n)
+Insertion (Enqueue) → O(1)
+Deletion (Dequeue) → O(1)
+
+Singly Linked List
+
+Access → O(n)
+Search → O(n)
+Insertion → O(1)
+Deletion → O(1)
+
+Doubly Linked List
+
+Access → O(n)
+Search → O(n)
+Insertion → O(1)
+Deletion → O(1)
+
+Hash Table
+
+Access → N/A
+Search → O(1) average
+Insertion → O(1) average
+Deletion → O(1) average
+
+Worst case → O(n)
+
+Binary Search Tree
+
+Average Case
+
+Access → O(log n)
+Search → O(log n)
+Insertion → O(log n)
+Deletion → O(log n)
+
+Worst Case
+
+Access → O(n)
+Search → O(n)
+Insertion → O(n)
+Deletion → O(n)
+
+Sorting Algorithms
+Bubble Sort
+
+Best → O(n)
+Average → O(n²)
+Worst → O(n²)
+Space → O(1)
+
+Insertion Sort
+
+Best → O(n)
+Average → O(n²)
+Worst → O(n²)
+Space → O(1)
+
+Selection Sort
+
+Best → O(n²)
+Average → O(n²)
+Worst → O(n²)
+Space → O(1)
+
+Merge Sort
+
+Best → O(n log n)
+Average → O(n log n)
+Worst → O(n log n)
+Space → O(n)
+
+Quick Sort
+
+Best → O(n log n)
+Average → O(n log n)
+Worst → O(n²)
+Space → O(log n)
+
+Heap Sort
+
+Best → O(n log n)
+Average → O(n log n)
+Worst → O(n log n)
+Space → O(1)
+
+Radix Sort
+
+Best → O(nk)
+Average → O(nk)
+Worst → O(nk)
