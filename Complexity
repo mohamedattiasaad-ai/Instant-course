@@ -1,0 +1,10 @@
+Complexity 👇 
+Worst (Slowest) ↑
+ 💧 O(n!) ____ Factorial – Traveling Salesman
+ 💧 O(kⁿ) ____ Exponential – Recursive Fibonacci
+ 💧 O(nᵏ) ____ Polynomial – Nested Loops
+ 💧 O(n log n) ____ Merge Sort و Quick Sort
+ 💧 O(n) ____ Linear – Linear Search
+ 💧 O(log n) ____ Logarithmic – Binary Search
+ 💧 O(1) _____ Constant – Array Access و Hash Table
+Best (Fastest) ↓
