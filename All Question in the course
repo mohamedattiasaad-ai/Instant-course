@@ -1,2 +1,4 @@
 ليه نقسم علس 10 لان احنا في النطام العشري    (%)
 ليه ال dictionary: سريع في البحث لانه يستخدم ال Hash Table o(1) 
+DFS --> stack or recursion
+BFS --> queue
