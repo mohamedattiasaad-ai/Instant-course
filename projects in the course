@@ -58,5 +58,52 @@ Recipe1.displaying()
 ###################################################################################################3
 
 
+class adduser:
+    def __init__(self,firstname,lastname,email,password,stute="inactive"):
+        self.firstname=firstname
+        self.lastname=lastname
+        self.email=email
+        self.password=password
+        self.stute=stute
+
+    def display(self):
+        print(f"the user name is {self.firstname} {self.lastname}")    
+        print(f"the user email is {self.email}")
+        print(f"the user password is {self.password}")
+        print(f"the user stute is {self.stute}")
+def userinformation():
+    firstname=input("enter the first name ")
+    lastname=input("enter the last name ")
+    email=input("enter the email ")
+    password=input("enter the password ")
+    return adduser(firstname,lastname,email,password,stute="inactive")
+
+
+userlist=[]
+
+
+while True:
+  print("welcome to user mangemant")  
+  print("\tchoice an action\t \n") 
+  print("1. Add new User") 
+  print("2. Display all user" )
+  print("3. Exit")
+  choose=input("enter your choose")
+  if choose == "1":
+    userlist.append(userinformation())
+  elif choose == "2":
+     if len(userlist)==0:
+      print("not found")
+     else:
+        for user in userlist:
+         user.display()
+  elif choose=="3":
+     print("Exit")
+     break
+  else:
+     print(" an Err try again")
+     
+
+
 
 
