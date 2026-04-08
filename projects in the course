@@ -1,0 +1,62 @@
+class Movie:
+    def __init__(self,titel,director,year,gender):
+        self.titel = titel
+        self.director = director
+        self.year = year
+        self.gender = gender
+
+    def printoptions(self):
+        print("Titel: ", self.titel)
+        print("Director: ", self.director)
+        print("Year: ", self.year)
+        print (f"the gender is {self.gender}")
+    def directortion(self,director):
+        self.director=director
+
+movie1= Movie ("inception","mhamed","2024-245","si-fi")  
+movie2= Movie ("new","live","2029-2-5","si-fi")  
+movie3= Movie ("jhoiiio","mhamed","2024-245","si-fi")  
+movie5= Movie ("inception","mhamed","2024-245","si-fi")  
+movie5= Movie ("inception","mhamed","2024-245","si-fi")  
+
+movie1.printoptions()
+movie1.directortion("saad")
+movie1.printoptions()  
+movie5.directortion("jodb")
+movie5.printoptions()   
+
+#############################################################################################################3
+scand
+class Recipe :
+    def __init__(self,Recipename,ingredients,cookingtime,cookinginstraction):
+        self.Recipename = Recipename
+        self.ingredients = ingredients  
+        self.cookingtime = cookingtime
+        self.cookinginstraction = cookinginstraction
+
+    def displaying(self):
+        print(f"name {self.Recipename}")
+        print(f"ingredients {self.ingredients}")
+        print(f"cookingtime {self.cookingtime}")
+        print(f"cookinginstraction {self.cookinginstraction}")
+        print("_"*20)
+        
+
+def input_Recipe():
+    Recipename=input("Enter the name of recipe")
+    ingredients=input("Enter the ingredients of recipe")
+    cookingtime=input("Enter the cookingtime of recipe")
+    cookinginstraction=input("Enter the  cookinginstraction of recipe")
+    return Recipe(Recipename,ingredients,cookingtime,cookinginstraction)
+print("welcome to the  Kitchen👉")
+Recipe1=input_Recipe()
+print('Recipe add successfully*\n')
+print("the recipe is") 
+Recipe1.displaying()
+
+
+###################################################################################################3
+
+
+
+
