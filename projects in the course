@@ -100,6 +100,26 @@ while True:
   elif choose=="3":
      print("Exit")
      break
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+class Car:
+    wheels= 4   #class attribuet
+    def __init__(self,brand,year):  
+       self.brand=brand   #instance attribute 
+       self.year=year   #instance attribute 
+        #instance mathod accesses specific object data
+    def __init__(self):#instance mathod  علشان مبعوت لها self    تخص كل object
+        print(f"the brand name is {self.brand}  @ and the year is {self.year}")
+        #class method accesses class varibles
+    @classmethod
+    def change_wheels(cls , new_count):
+        cls.wheels=new_count 
+        print(cls.wheels)
+    @staticmethod     # تنفذ مهمه معينه في الكود
+    def is_old(year):
+        if year<= 2002:
+            return " old"
+        else :
+            return " modern"
   else:
      print(" an Err try again")
      
