@@ -1,0 +1,178 @@
+SQL Cheat Sheet
+أولًا: DDL (Data Definition Language)
+الأمر	الاستخدام
+CREATE DATABASE	إنشاء قاعدة بيانات جديدة.
+DROP DATABASE	حذف قاعدة البيانات نهائيًا.
+CREATE TABLE	إنشاء جدول جديد.
+DROP TABLE	حذف الجدول وكل بياناته.
+ALTER TABLE	تعديل هيكل الجدول (إضافة/حذف/تعديل عمود).
+TRUNCATE TABLE	حذف جميع البيانات مع الاحتفاظ بالجدول.
+RENAME	تغيير اسم الجدول أو الكائن.
+ثانيًا: DML (Data Manipulation Language)
+الأمر	الاستخدام
+INSERT INTO	إضافة بيانات جديدة.
+UPDATE	تعديل بيانات موجودة.
+DELETE	حذف صفوف معينة أو جميع الصفوف.
+ثالثًا: DQL (Data Query Language)
+الأمر	الاستخدام
+SELECT	استرجاع البيانات من الجدول.
+DISTINCT	حذف القيم المكررة من النتائج.
+TOP	عرض أول عدد معين من الصفوف (SQL Server).
+LIMIT	تحديد عدد الصفوف (MySQL/PostgreSQL).
+AS	إعطاء اسم مستعار لعمود أو جدول.
+WHERE Operators
+العامل	الاستخدام
+=	يساوي.
+!= أو <>	لا يساوي.
+>	أكبر من.
+<	أصغر من.
+>=	أكبر من أو يساوي.
+<=	أصغر من أو يساوي.
+BETWEEN	بين قيمتين.
+IN	ضمن مجموعة قيم.
+NOT IN	ليس ضمن مجموعة قيم.
+LIKE	البحث باستخدام أنماط.
+NOT LIKE	عكس LIKE.
+IS NULL	القيمة فارغة.
+IS NOT NULL	القيمة ليست فارغة.
+EXISTS	يتحقق من وجود صف.
+NOT EXISTS	يتحقق من عدم وجود صف.
+Wildcards
+الرمز	الاستخدام
+%	أي عدد من الأحرف.
+_	حرف واحد فقط.
+
+مثال:
+
+LIKE 'A%'
+
+أي اسم يبدأ بحرف A.
+
+Logical Operators
+العامل	الاستخدام
+AND	يجب تحقق جميع الشروط.
+OR	يكفي تحقق شرط واحد.
+NOT	عكس الشرط.
+ORDER BY
+الأمر	الاستخدام
+ORDER BY ASC	ترتيب تصاعدي.
+ORDER BY DESC	ترتيب تنازلي.
+Aggregate Functions
+Function	الاستخدام
+COUNT()	عدد الصفوف.
+SUM()	مجموع القيم.
+AVG()	متوسط القيم.
+MIN()	أقل قيمة.
+MAX()	أكبر قيمة.
+GROUP BY & HAVING
+الأمر	الاستخدام
+GROUP BY	تجميع البيانات حسب عمود معين.
+HAVING	فلترة المجموعات بعد التجميع.
+Joins
+النوع	الاستخدام
+INNER JOIN	الصفوف المشتركة فقط.
+LEFT JOIN	كل صفوف الجدول الأيسر والمشتركة.
+RIGHT JOIN	كل صفوف الجدول الأيمن والمشتركة.
+FULL JOIN	جميع الصفوف من الجدولين.
+CROSS JOIN	جميع الاحتمالات الممكنة (Cartesian Product).
+SELF JOIN	ربط الجدول بنفسه.
+Subqueries
+الأمر	الاستخدام
+Subquery	استعلام داخل استعلام.
+Correlated Subquery	استعلام يعتمد على الاستعلام الخارجي.
+UNION
+الأمر	الاستخدام
+UNION	دمج النتائج مع حذف التكرار.
+UNION ALL	دمج النتائج مع الاحتفاظ بالتكرار.
+INTERSECT	القيم المشتركة فقط.
+EXCEPT	القيم الموجودة في الأول فقط.
+Views
+الأمر	الاستخدام
+CREATE VIEW	إنشاء View.
+ALTER VIEW	تعديل View.
+DROP VIEW	حذف View.
+Indexes
+الأمر	الاستخدام
+CREATE INDEX	إنشاء Index لتسريع البحث.
+CREATE UNIQUE INDEX	إنشاء Index يمنع التكرار.
+DROP INDEX	حذف Index.
+CTE
+الأمر	الاستخدام
+WITH	إنشاء Common Table Expression مؤقتة.
+Window Functions
+Function	الاستخدام
+OVER()	تعريف نافذة الحساب.
+PARTITION BY	تقسيم البيانات إلى مجموعات.
+ROW_NUMBER()	ترقيم الصفوف.
+RANK()	ترتيب مع فجوات عند التعادل.
+DENSE_RANK()	ترتيب بدون فجوات.
+NTILE()	تقسيم الصفوف إلى مجموعات متساوية.
+LAG()	جلب قيمة الصف السابق.
+LEAD()	جلب قيمة الصف التالي.
+FIRST_VALUE()	أول قيمة في النافذة.
+LAST_VALUE()	آخر قيمة في النافذة.
+Stored Procedures
+الأمر	الاستخدام
+CREATE PROCEDURE	إنشاء Procedure.
+EXEC	تشغيل Procedure.
+ALTER PROCEDURE	تعديل Procedure.
+DROP PROCEDURE	حذف Procedure.
+OUTPUT	إرجاع قيمة من Procedure.
+User Defined Functions (UDF)
+النوع	الاستخدام
+Scalar Function	ترجع قيمة واحدة.
+Inline Table Function	ترجع جدولًا.
+Multi Statement Function	ترجع جدولًا بعد عدة أوامر.
+Triggers
+الأمر	الاستخدام
+CREATE TRIGGER	إنشاء Trigger.
+AFTER	يعمل بعد تنفيذ العملية.
+INSTEAD OF	يعمل بدل تنفيذ العملية.
+INSERTED	يحتوي على البيانات الجديدة.
+DELETED	يحتوي على البيانات القديمة أو المحذوفة.
+ALTER TRIGGER	تعديل Trigger.
+DROP TRIGGER	حذف Trigger.
+Transactions
+الأمر	الاستخدام
+BEGIN TRANSACTION	بدء Transaction.
+COMMIT	حفظ التغييرات نهائيًا.
+ROLLBACK	التراجع عن التغييرات.
+SAVE TRANSACTION	إنشاء نقطة رجوع.
+أهم المقارنات
+DELETE vs TRUNCATE vs DROP
+DELETE	TRUNCATE	DROP
+يحذف الصفوف	يحذف كل البيانات	يحذف الجدول بالكامل
+يمكن استخدام WHERE	لا يدعم WHERE	يحذف الجدول نفسه
+يمكن التراجع عنه داخل Transaction	يمكن التراجع عنه في SQL Server إذا كان داخل Transaction	يحذف الهيكل والبيانات
+WHERE vs HAVING
+WHERE	HAVING
+قبل GROUP BY	بعد GROUP BY
+على الصفوف	على المجموعات
+UNION vs UNION ALL
+UNION	UNION ALL
+يحذف التكرار	يحتفظ بالتكرار
+RANK vs DENSE_RANK vs ROW_NUMBER
+ROW_NUMBER	RANK	DENSE_RANK
+ترقيم فريد	يترك فجوات	بدون فجوات
+INNER vs LEFT vs RIGHT vs FULL JOIN
+النوع	النتيجة
+INNER	المشترك فقط
+LEFT	كل الأيسر + المشترك
+RIGHT	كل الأيمن + المشترك
+FULL	كل الصفوف من الجدولين
+Procedure vs Function
+Procedure	Function
+تُشغل بـ EXEC	تُستخدم داخل SELECT
+يمكنها تعديل البيانات	تُستخدم غالبًا للحسابات وإرجاع قيمة أو جدول
+Clustered vs Non-Clustered Index
+Clustered	Non-Clustered
+يرتب البيانات نفسها	ينشئ فهرسًا منفصلًا
+واحد فقط لكل جدول	يمكن إنشاء عدة فهارس
+View vs Table
+View	Table
+جدول افتراضي	جدول حقيقي
+يعتمد على استعلام	يخزن البيانات
+CTE vs View vs Subquery
+CTE	View	Subquery
+مؤقت داخل استعلام	محفوظ في قاعدة البيانات	استعلام داخل استعلام
+ينتهي بانتهاء الاستعلام	دائم حتى حذفه	يستخدم داخل استعلام واحد
