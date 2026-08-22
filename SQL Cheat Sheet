@@ -176,3 +176,15 @@ CTE vs View vs Subquery
 CTE	View	Subquery
 مؤقت داخل استعلام	محفوظ في قاعدة البيانات	استعلام داخل استعلام
 ينتهي بانتهاء الاستعلام	دائم حتى حذفه	يستخدم داخل استعلام واحد
+
+أشهر
+
+Window Functions
+
+
+أهمهم اللي لازم تعرفهم:
+
+Ranking
+ROW_NUMBER()
+RANK()
+DENSE_RANK()
