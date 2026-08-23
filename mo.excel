@@ -1,26 +1,428 @@
-⭐ ملخص للحفظ
-Function	معناها
-SUM	جمع كل الأرقام
-SUMIF	جمع بشرط
-AVERAGE	المتوسط
-AVERAGEIF	المتوسط بشرط
-MIN	أصغر قيمة
-MAX	أكبر قيمة
-COUNT	عدّ الأرقام
-COUNTA	عدّ الخلايا غير الفارغة
-IF	شرط
-🧠 احفظهم كده
+📌 Excel Functions — Final Cheat Sheet
+🟢 1. SUM
 
-SUM → اجمع
-SUMIF → اجمع بشرط
-AVERAGE → متوسط
-AVERAGEIF → متوسط بشرط
-MIN → أصغر
-MAX → أكبر
-COUNT → عدّ الأرقام
-COUNTA → عدّ أي حاجة
-IF → لو الشرط حصل اعمل كذا
+الجمع
 
+=SUM(A2:A10)
+
+مثال: مجموع المرتبات.
+
+🟢 2. AVERAGE
+
+المتوسط
+
+=AVERAGE(A2:A10)
+
+مثال: متوسط الدرجات.
+
+🟢 3. MIN
+
+أصغر قيمة
+
+=MIN(A2:A10)
+🟢 4. MAX
+
+أكبر قيمة
+
+=MAX(A2:A10)
+🟢 5. COUNT
+
+عدد الخلايا التي تحتوي على أرقام
+
+=COUNT(A2:A10)
+
+⚠️ لا يحسب النصوص.
+
+🟢 6. COUNTA
+
+عدد الخلايا غير الفارغة
+
+=COUNTA(A2:A10)
+
+يحسب أرقام + نصوص.
+
+الفرق:
+COUNT  → أرقام فقط
+COUNTA → أي خلية مش فاضية
+🟡 Functions الخاصة بالشروط
+7. IF
+
+لو شرط حصل اعمل حاجة، ولو لأ اعمل حاجة تانية
+
+=IF(A2>=50,"Pass","Fail")
+
+يعني:
+
+>=50 → Pass
+<50  → Fail
+8. AND
+
+كل الشروط لازم تكون صحيحة
+
+=AND(A2>=50,B2>=50)
+
+النتيجة:
+
+TRUE / FALSE
+9. OR
+
+يكفي شرط واحد يكون صحيح
+
+=OR(A2>=50,B2>=50)
+10. IFS
+
+أكثر من شرط بدون تداخل IF كتير
+
+=IFS(
+A2>=90,"A",
+A2>=80,"B",
+A2>=70,"C",
+A2>=60,"D",
+TRUE,"F"
+)
+11. Nested IF
+
+IF داخل IF
+
+=IF(A2>=90,"A",
+   IF(A2>=80,"B",
+   IF(A2>=70,"C","F")))
+🔵 Text Functions
+12. LEFT
+
+ياخد حروف من الشمال
+
+=LEFT(A2,3)
+
+Mohamed → Moh
+
+13. RIGHT
+
+ياخد حروف من اليمين
+
+=RIGHT(A2,3)
+
+Mohamed → med
+
+14. MID
+
+ياخد حروف من النص
+
+=MID(A2,2,3)
+
+يعني:
+
+ابدأ من الحرف 2
+وخد 3 حروف
+15. LEN
+
+عدد الحروف
+
+=LEN(A2)
+
+Ahmed → 5
+
+16. TRIM
+
+يشيل المسافات الزائدة
+
+=TRIM(A2)
+
+مثلاً:
+
+"  Ahmed   Ali  "
+
+تصبح:
+
+"Ahmed Ali"
+17. UPPER
+
+يحول الحروف إلى Capital
+
+=UPPER(A2)
+
+mohamed → MOHAMED
+
+18. LOWER
+
+يحول الحروف إلى Small
+
+=LOWER(A2)
+
+MOHAMED → mohamed
+
+19. CONCAT
+
+دمج نصوص
+
+=CONCAT(A2," ",B2)
+
+مثلاً:
+
+Ahmed + Ali
+
+→
+
+Ahmed Ali
+20. TEXTJOIN
+
+دمج عدة نصوص مع Separator
+
+=TEXTJOIN(" ",TRUE,A2,B2,C2)
+
+مثلاً:
+
+Ahmed | Mohamed | Ali
+
+→
+
+Ahmed Mohamed Ali
+الفرق:
+CONCAT    → دمج
+TEXTJOIN  → دمج + فاصل + تجاهل الفارغ
+🟠 Number Functions
+21. ROUND
+
+تقريب عادي
+
+=ROUND(A2,2)
+
+12.567 → 12.57
+
+22. ROUNDUP
+
+تقريب لأعلى
+
+=ROUNDUP(A2,2)
+
+12.561 → 12.57
+
+23. ROUNDDOWN
+
+تقريب لأسفل
+
+=ROUNDDOWN(A2,2)
+
+12.569 → 12.56
+
+🟣 Date Functions
+24. TODAY
+
+تاريخ اليوم
+
+=TODAY()
+
+مثلاً:
+
+23/08/2026
+25. NOW
+
+التاريخ + الوقت الحالي
+
+=NOW()
+
+مثلاً:
+
+23/08/2026 18:30
+الفرق:
+TODAY → Date
+NOW   → Date + Time
+26. DATE
+
+إنشاء تاريخ
+
+=DATE(2026,8,23)
+
+→ 23/08/2026
+
+27. YEAR
+
+استخراج السنة
+
+=YEAR(A2)
+
+23/08/2026 → 2026
+
+28. MONTH
+
+استخراج الشهر
+
+=MONTH(A2)
+
+→ 8
+
+29. DAY
+
+استخراج اليوم
+
+=DAY(A2)
+
+→ 23
+
+🔴 Lookup Functions
+30. VLOOKUP
+
+بحث رأسي
+
+=VLOOKUP(E2,A2:C10,2,FALSE)
+
+المعنى:
+
+دور على E2
+في أول عمود
+ورجع العمود رقم 2
+
+⚠️ VLOOKUP تبحث من اليسار لليمين.
+
+31. HLOOKUP
+
+بحث أفقي
+
+=HLOOKUP(E2,A1:D3,2,FALSE)
+V → Vertical
+H → Horizontal
+32. XLOOKUP
+
+بحث حديث ومرن
+
+=XLOOKUP(E2,A2:A10,B2:B10)
+
+معناها:
+
+دور على E2
+في A2:A10
+رجع النتيجة من B2:B10
+
+وممكن تحدد رسالة لو القيمة مش موجودة:
+
+=XLOOKUP(E2,A2:A10,B2:B10,"Not Found")
+33. MATCH
+
+تجيب مكان القيمة
+
+=MATCH("Mohamed",A2:A10,0)
+
+لو Mohamed هو العنصر الثالث:
+
+3
+احفظ:
+
+MATCH = المكان
+
+34. INDEX
+
+تجيب القيمة من مكان معين
+
+=INDEX(A2:A10,3)
+
+يعني هات العنصر رقم 3.
+
+احفظ:
+
+INDEX = القيمة
+
+35. INDEX + MATCH
+
+بحث احترافي
+
+=INDEX(C2:C10,MATCH(E2,A2:A10,0))
+
+فكر فيها:
+
+MATCH
+↓
+حدد المكان
+
+INDEX
+↓
+هات القيمة
+🟤 Conditional Counting
+36. COUNTIF
+
+عد بشرط
+
+=COUNTIF(A2:A10,"Cairo")
+
+يعني عدد مرات ظهور Cairo.
+
+مثال رقمي:
+
+=COUNTIF(B2:B10,">5000")
+
+يعني عدد القيم الأكبر من 5000.
+
+⚫ Error Handling
+37. IFERROR
+
+تغيير شكل الخطأ
+
+بدل:
+
+#N/A
+
+تقدر تعمل:
+
+=IFERROR(A2/B2,"Error")
+
+لو حصل Error:
+
+Error
+🚀 أهم Functions تحفظها جدًا
+
+لو الوقت ضيق، ركز على دول:
+
+SUM
+AVERAGE
+COUNT
+COUNTA
+IF
+AND
+OR
+COUNTIF
+ROUND
+TODAY
+VLOOKUP
+XLOOKUP
+INDEX
+MATCH
+IFERROR
+
+والـ Lookup احفظهم كده:
+
+VLOOKUP → بحث رأسي
+HLOOKUP → بحث أفقي
+XLOOKUP → بحث مرن وحديث
+MATCH   → يجيب المكان
+INDEX   → يجيب القيمة
+
+والـ Text:
+
+LEFT    → من الشمال
+RIGHT   → من اليمين
+MID     → من النص
+LEN     → عدد الحروف
+TRIM    → إزالة المسافات الزائدة
+UPPER   → Capital
+LOWER   → Small
+CONCAT  → دمج
+TEXTJOIN → دمج بفاصل
+
+والـ Numbers:
+
+ROUND     → تقريب عادي
+ROUNDUP   → لأعلى
+ROUNDDOWN → لأسفل
+
+والـ Dates:
+
+TODAY → تاريخ اليوم
+NOW   → تاريخ + وقت
+DATE  → إنشاء تاريخ
+YEAR  → السنة
+MONTH → الشهر
+DAY   → اليوم
+
+ده يعتبر Cheat Sheet سريع للمراجعة.
 
 SUM
 AVERAGE
