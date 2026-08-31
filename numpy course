@@ -1,1 +1,716 @@
+np.arange()
+np.array()
+np.zeros()
+np.ones()
+np.full()
+np.linspace()
+reshape()
+copy()
+np.random.random()
+np.random.normal()
+np.random.default_rng()
+r.integers()
+np.concatenate()
+np.vstack()
+np.hstack()
+np.vsplit()
+np.hsplit()
+print()
+range()
+len()
+min()
+max()
+np.max()
+np.mean()
 
+np.array()
+np.abs()
+np.where()
+np.sqrt()
+sum()
+np.sum()
+np.max()
+np.min()
+np.ones()
+print()
+np.arange()
+np.mean()
+np.exp()
+np.log()
+np.std()
+np.random.randint()
+np.median()
+np.percentile()
+np.any()
+np.all()
+np.fill_diagonal()
+np.cumsum()
+np.cumprod()
+flatten()
+reshape()
+
+.shape
+.ndim
+.size
+.dtype
+.nbytes
+.T
+
++
+-
+*
+/
+**
+%
+
+
+1. np.array()
+
+
+بتحوّل List أو مجموعة قيم إلى NumPy Array.
+
+arr = np.array([1, 2, 3, 4])
+
+مثال من الملف كمان لتحديد نوع البيانات:
+
+arr = np.array([1, 2, 3], dtype=np.float32)
+2. np.arange()
+
+بتعمل Array من أرقام متتابعة، وتشبه range().
+
+arr = np.arange(1, 10)
+
+الناتج:
+
+[1 2 3 4 5 6 7 8 9]
+
+وتقدر تحدد البداية والنهاية والخطوة:
+
+np.arange(0, 10, 2)
+
+الناتج:
+
+[0 2 4 6 8]
+3. np.linspace()
+
+بتقسم Range إلى عدد محدد من القيم المتساوية المسافة.
+
+np.linspace(0, 8, 5)
+
+الناتج تقريبًا:
+
+[0. 2. 4. 6. 8.]
+
+الفرق المهم:
+
+np.arange(start, stop, step)
+np.linspace(start, stop, num)
+4. np.zeros()
+
+بتعمل Array كلها أصفار.
+
+np.zeros((3, 3))
+5. np.ones()
+
+بتعمل Array كلها 1.
+
+np.ones((3, 3))
+6. np.full()
+
+بتعمل Array كلها قيمة أنت بتحددها.
+
+np.full((3, 3), 7)
+
+الناتج:
+
+[[7 7 7]
+ [7 7 7]
+ [7 7 7]]
+7. .reshape()
+
+بتغيّر شكل الـ Array بدون تغيير عدد العناصر.
+
+arr = np.arange(1, 13)
+arr.reshape(3, 4)
+
+يعني 12 عنصر اتحولوا إلى 3 صفوف × 4 أعمدة.
+
+وممكن تستخدم -1 وتسيب NumPy تحسب البُعد:
+
+arr.reshape(-1, 1)
+
+وده يحولها إلى Column Vector.
+
+8. .shape
+
+بيعرفك أبعاد الـ Array.
+
+arr.shape
+
+مثلاً:
+
+(3, 4)
+
+يعني 3 صفوف و4 أعمدة.
+
+9. .ndim
+
+بيعرفك عدد الأبعاد.
+
+arr.ndim
+
+مثلاً Matrix عادية:
+
+2
+10. .size
+
+عدد العناصر كلها.
+
+arr.size
+
+لو 3 × 3:
+
+9
+11. .dtype
+
+بيعرفك نوع البيانات.
+
+arr.dtype
+
+مثلاً:
+
+float64
+
+أو:
+
+int64
+12. .nbytes
+
+بيحسب عدد الـ Bytes اللي الـ Array مستخدماها في الذاكرة.
+
+arr.nbytes
+13. np.float32
+
+بيحدد نوع البيانات Float بحجم 32 bit.
+
+arr = np.array([1,2,3], dtype=np.float32)
+14. Indexing
+
+للحصول على عنصر:
+
+arr[0]
+
+أو في Matrix:
+
+arr[0, 1]
+
+يعني الصف الأول والعمود الثاني.
+
+15. Slicing
+arr[start:stop:step]
+
+مثلاً:
+
+arr[3:8]
+
+من index 3 إلى index 7.
+
+16. عكس الـ Array
+arr[::-1]
+
+مثلاً:
+
+[1,2,3,4]
+
+تبقى:
+
+[4,3,2,1]
+17. كل العناصر الموجودة في odd indices
+arr[1::2]
+18. اختيار أول Row
+A[0]
+19. اختيار آخر Column
+A[:, -1]
+
+: معناها كل الصفوف.
+
+20. اختيار جزء من Matrix
+A[:2, :3]
+
+يعني أول صفين وأول 3 أعمدة.
+
+21. .copy()
+
+بتعمل نسخة مستقلة من الـ Array.
+
+b = a.copy()
+
+لو غيرت b، الـ a الأصلية مش هتتغير.
+
+وده مختلف عن:
+
+b = a
+
+لأن الاتنين هنا بيشيروا لنفس البيانات.
+
+22. np.newaxis
+
+بتضيف Dimension جديد.
+
+مثلاً تحويل Vector إلى Column Vector:
+
+a[:, np.newaxis]
+
+لو:
+
+a.shape
+
+كانت:
+
+(3,)
+
+هتبقى:
+
+(3, 1)
+Random
+23. np.random.random()
+
+بتولد أرقام Random بين 0 و 1.
+
+np.random.random((3,3))
+24. np.random.normal()
+
+بتولد أرقام من Normal Distribution.
+
+np.random.normal(0, 1, (3,3))
+
+هنا:
+
+mean = 0
+std = 1
+25. np.random.randint()
+
+بتولد أرقام صحيحة Random.
+
+np.random.randint(1, 100, size=20)
+
+يعني 20 رقم من 1 لحد قبل 100.
+
+26. np.random.default_rng()
+
+الطريقة الحديثة لإنشاء Random Generator.
+
+r = np.random.default_rng(10)
+
+الـ 10 هنا Seed.
+
+27. .integers()
+
+بتولد Integers باستخدام الـ Generator.
+
+r.integers(10, size=5)
+دمج وتقسيم Arrays
+28. np.concatenate()
+
+بتدمج Arrays.
+
+np.concatenate([a, b])
+
+مثلاً:
+
+a = [1 2 3]
+b = [4 5 6]
+
+الناتج:
+
+[1 2 3 4 5 6]
+29. np.vstack()
+
+Vertical Stack.
+
+بيحط Arrays فوق بعض.
+
+np.vstack([a, b])
+
+الناتج:
+
+[[1 2 3]
+ [4 5 6]]
+30. np.hstack()
+
+Horizontal Stack.
+
+np.hstack([a, b])
+
+الناتج:
+
+[1 2 3 4 5 6]
+31. np.vsplit()
+
+يقسم Matrix رأسيًا إلى مجموعات Rows.
+
+upper, lower = np.vsplit(grid, [2])
+32. np.hsplit()
+
+يقسم Matrix إلى مجموعات Columns.
+
+left, right = np.hsplit(grid, [2])
+Mathematical Operations
+33. +
+
+جمع قيمة أو Arrays.
+
+x + 3
+34. -
+
+طرح.
+
+x - 3
+35. *
+
+ضرب element-wise.
+
+x * 2
+36. /
+
+قسمة.
+
+x / 2
+37. **
+
+Power.
+
+x ** 2
+
+يعني تربيع كل عنصر.
+
+38. %
+
+باقي القسمة.
+
+arr % 2
+
+مهمة جدًا لمعرفة الرقم زوجي ولا فردي.
+
+مثلاً:
+
+arr % 2 == 0
+
+يختار الأرقام الزوجية.
+
+UFuncs
+39. np.abs()
+
+القيمة المطلقة.
+
+np.abs([-5, -2, 3])
+
+الناتج:
+
+[5 2 3]
+40. np.sqrt()
+
+الجذر التربيعي.
+
+np.sqrt([4, 9, 25])
+
+الناتج:
+
+[2. 3. 5.]
+41. np.exp()
+
+بيحسب:
+
+$$ e^x $$
+np.exp(x)
+42. np.log()
+
+Natural Log.
+
+np.log(x)
+Aggregation Functions
+43. np.sum()
+
+مجموع العناصر.
+
+np.sum(arr)
+
+وفي Matrix:
+
+np.sum(arr, axis=0)
+
+مجموع كل Column.
+
+np.sum(arr, axis=1)
+
+مجموع كل Row.
+
+44. sum()
+
+Python built-in sum وظهر في الملف أيضًا.
+
+sum(arr)
+
+لكن مع NumPy غالبًا بنستخدم:
+
+np.sum(arr)
+45. np.mean()
+
+المتوسط.
+
+np.mean(arr)
+46. .mean()
+
+نفس الفكرة كـ method:
+
+arr.mean()
+47. np.min()
+
+أقل قيمة.
+
+np.min(arr)
+48. .min()
+arr.min()
+49. np.max()
+
+أكبر قيمة.
+
+np.max(arr)
+50. .max()
+arr.max()
+51. np.std()
+
+Standard Deviation.
+
+np.std(arr)
+
+وممكن:
+
+np.std(arr, axis=0)
+
+Standard deviation لكل Column.
+
+52. np.median()
+
+Median.
+
+np.median(arr)
+
+مثلاً:
+
+[10,20,30,40,50]
+
+Median:
+
+30
+53. np.percentile()
+
+تحسب Percentile.
+
+np.percentile(data, 75)
+
+يعني 75th percentile.
+
+Boolean Masking
+54. مقارنة مباشرة
+arr > 5
+
+بتطلع Boolean Array.
+
+مثلاً:
+
+[False False True True]
+55. Boolean Mask
+mask = arr > 5
+arr[mask]
+
+بيجيب القيم اللي أكبر من 5 فقط.
+
+56. تعديل باستخدام Mask
+arr[arr < 5] = 0
+
+أي قيمة أقل من 5 تصبح صفر.
+
+57. np.where()
+
+واحدة من أهم Functions في الملف.
+
+الصيغة:
+
+np.where(condition, value_if_true, value_if_false)
+
+مثلاً:
+
+np.where(arr < 5, 0, arr)
+
+أي رقم أقل من 5 يصبح صفر، والباقي يظل كما هو.
+
+مثال آخر:
+
+np.where(arr % 2 == 0, 1 / arr, arr)
+
+اقلب الأرقام الزوجية فقط إلى Reciprocal.
+
+Logical Conditions
+58. &
+
+AND بين شرطين.
+
+mask = (arr % 2 == 0) & (arr > 3)
+
+يعني:
+
+الرقم زوجي وفي نفس الوقت أكبر من 3.
+
+مهم جدًا تحط كل شرط داخل أقواس.
+
+59. np.any()
+
+هل يوجد على الأقل عنصر واحد يحقق الشرط؟
+
+np.any(data > 500, axis=1)
+
+ممكن تستخدمها لاختيار الصفوف اللي فيها على الأقل قيمة أكبر من 500.
+
+60. np.all()
+
+هل كل العناصر تحقق الشرط؟
+
+np.all(data > 200, axis=1)
+
+يعني اختار الصفوف اللي كل قيمها أكبر من 200.
+
+Cumulative Operations
+61. np.cumsum()
+
+Cumulative Sum.
+
+arr = np.array([5,10,15,20])
+
+np.cumsum(arr)
+
+الناتج:
+
+[ 5 15 30 50]
+
+لأن:
+
+5
+5+10
+5+10+15
+5+10+15+20
+62. np.cumprod()
+
+Cumulative Product.
+
+np.cumprod(arr)
+
+كل عنصر بيكون حاصل ضرب العناصر اللي قبله.
+
+Array Transformation
+63. .flatten()
+
+تحول Matrix إلى 1D Array.
+
+A.flatten()
+
+مثلاً:
+
+[[1,2],
+ [3,4]]
+
+تبقى:
+
+[1 2 3 4]
+64. .T
+
+Transpose.
+
+تبدّل Rows مع Columns.
+
+A.T
+
+مثلاً:
+
+[[10,20,30],
+ [40,50,60]]
+
+تبقى:
+
+[[10,40],
+ [20,50],
+ [30,60]]
+65. np.fill_diagonal()
+
+تغير عناصر الـ Diagonal.
+
+np.fill_diagonal(A, 0)
+
+مثلاً:
+
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+
+تصبح:
+
+[[0 2 3]
+ [4 0 6]
+ [7 8 0]]
+Broadcasting
+
+دي مش Function معينة، دي طريقة NumPy للتعامل مع Arrays بأبعاد مختلفة.
+
+مثلاً:
+
+a = np.array([1,2,3])
+
+a + 10
+
+الناتج:
+
+[11 12 13]
+
+NumPy عمل Broadcasting للـ 10.
+
+مثال Matrix:
+
+M = np.ones((3,3))
+a = np.array([1,2,3])
+
+M + a
+
+بيضيف a لكل Row.
+
+Normalization
+
+موجودة في الملف بالصورة دي:
+
+mn = np.min(arr)
+mx = np.max(arr)
+
+normalized = (arr - mn) / (mx - mn)
+
+بتحول القيم غالبًا لنطاق:
+
+0 → 1
+Centering
+m = np.mean(data, axis=0)
+
+centered = data - m
+
+بتطرح Mean كل Column من قيم الـ Column.
+
+بعدها Mean الجديد بيكون تقريبًا:
+
+0
+Standardization
+
+المعادلة الموجودة في التمارين:
+
+mean = np.mean(data, axis=0)
+std = np.std(data, axis=0)
+
+standardized = (data - mean) / std
+
+ودي مهمة جدًا في Machine Learning
