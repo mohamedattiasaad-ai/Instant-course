@@ -1,0 +1,182 @@
+1) Descriptive Statistics
+Mean
+$$ \bar{x}=\frac{\sum x_i}{n} $$
+Range
+$$ Range=Max-Min $$
+Population Variance
+$$ \sigma^2=\frac{\sum (x_i-\mu)^2}{N} $$
+Sample Variance
+$$ s^2=\frac{\sum (x_i-\bar{x})^2}{n-1} $$
+Standard Deviation
+
+Population:
+
+$$ \sigma=\sqrt{\frac{\sum(x_i-\mu)^2}{N}} $$
+
+Sample:
+
+$$ s=\sqrt{\frac{\sum(x_i-\bar{x})^2}{n-1}} $$
+IQR
+$$ IQR=Q_3-Q_1 $$
+Outlier Limits
+
+Lower Fence:
+
+$$ Q_1-1.5(IQR) $$
+
+Upper Fence:
+
+$$ Q_3+1.5(IQR) $$
+
+القيمة خارج الحدود دي تعتبر Outlier.
+
+Relative Frequency
+$$ Relative\ Frequency=\frac{Frequency}{n} $$
+
+ولو Percentage:
+
+$$ Relative\ Frequency\%=\frac{Frequency}{n}\times100 $$
+Normal Distribution Rule
+$$ \mu\pm1\sigma \approx 68\% $$ $$ \mu\pm2\sigma \approx 95\% $$ $$ \mu\pm3\sigma \approx 99.7\% $$
+
+2) Probability
+Basic Probability
+$$ P(E)=\frac{\text{Favourable Outcomes}}{\text{Total Outcomes}} $$
+
+ودائمًا:
+
+$$ 0\le P(E)\le1 $$
+Complement
+$$ P(E^c)=1-P(E) $$
+Addition Rule — OR
+$$ P(A\cup B)=P(A)+P(B)-P(A\cap B) $$
+
+لو الأحداث Mutually Exclusive:
+
+$$ P(A\cap B)=0 $$
+
+إذن:
+
+$$ P(A\cup B)=P(A)+P(B) $$
+Multiplication Rule — AND
+$$ P(A\cap B)=P(A)\times P(B|A) $$
+
+لو Independent:
+
+$$ P(A\cap B)=P(A)\times P(B) $$
+Conditional Probability
+$$ P(A|B)=\frac{P(A\cap B)}{P(B)} $$
+
+3) Bayes' Theorem
+$$ P(A|B)=\frac{P(B|A)\times P(A)}{P(B)} $$
+
+احفظها:
+
+$$ Posterior=\frac{Likelihood\times Prior}{Evidence} $$
+
+4) Central Limit Theorem
+
+توزيع متوسطات العينات:
+
+$$ \bar{x}\sim N\left(\mu,\frac{\sigma^2}{n}\right) $$
+
+وغالبًا في الملف:
+
+$$ n\ge30 $$
+Standard Error
+
+لو \(\sigma\) معلومة:
+
+$$ SE=\frac{\sigma}{\sqrt n} $$
+
+لو بنستخدم Sample Standard Deviation:
+
+$$ SE=\frac{s}{\sqrt n} $$
+
+5) Z-Score للـSample Mean
+$$ z=\frac{\bar{x}-\mu}{\sigma/\sqrt n} $$
+
+أو في Hypothesis Testing:
+
+$$ z=\frac{\bar{x}-\mu_0}{\sigma/\sqrt n} $$
+6) Confidence Interval
+لو Population Standard Deviation معلوم
+$$ CI=\bar{x}\pm z^*\frac{\sigma}{\sqrt n} $$
+لو غير معلوم
+$$ CI=\bar{x}\pm t^*\frac{s}{\sqrt n} $$
+Margin of Error
+$$ ME=z^*\times SE $$
+
+وبالتالي:
+
+$$ CI=\bar{x}\pm ME $$
+أشهر قيم \(z^*\)
+Confidence	\(z^*\)
+90%	1.645
+95%	1.960
+99%	2.576
+
+7) Hypothesis Testing
+Z-Test
+$$ z=\frac{\bar{x}-\mu_0}{\sigma/\sqrt n} $$
+T-Test
+$$ t=\frac{\bar{x}-\mu_0}{s/\sqrt n} $$
+Degrees of Freedom
+$$ df=n-1 $$
+Decision باستخدام p-value
+
+لو:
+
+$$ p<\alpha $$
+
+إذن:
+
+$$ Reject\ H_0 $$
+
+ولو:
+
+$$ p\ge\alpha $$
+
+إذن:
+
+$$ Fail\ to\ Reject\ H_0 $$
+
+8) Type I / Type II Errors
+Type I Error
+$$ \alpha=P(Reject\ H_0|H_0\ True) $$
+
+يعني False Positive.
+
+Type II Error
+$$ \beta=P(Fail\ to\ Reject\ H_0|H_0\ False) $$
+
+يعني False Negative.
+
+Statistical Power
+$$ Power=1-\beta $$
+
+9) Regression
+Simple Linear Regression
+$$ \hat{y}=\beta_0+\beta_1X $$
+
+وفي صيغة الملف:
+
+$$ \hat{y}=\beta_0+\beta_1X+\epsilon $$
+
+حيث:
+
+\(\beta_0\) = Intercept
+\(\beta_1\) = Slope
+\(\epsilon\) = Error
+Multiple Linear Regression
+$$ \hat{y}=\beta_0+\beta_1X_1+\beta_2X_2+\cdots $$
+Logistic Regression
+$$ P(Y=1)=\frac{1}{1+e^{-z}} $$
+Polynomial Regression
+$$ \hat{y}=\beta_0+\beta_1X+\beta_2X^2 $$
+Poisson Regression
+$$ \log(\lambda)=\beta_0+\beta_1X $$
+
+أهم القوانين للحفظ السريع
+$$ Mean=\frac{\sum x}{n} $$ $$ Variance=\frac{\sum(x-\mu)^2}{N} $$ $$ Std=\sqrt{Variance} $$ $$ IQR=Q_3-Q_1 $$ $$ P(A\cup B)=P(A)+P(B)-P(A\cap B) $$ $$ P(A\cap B)=P(A)P(B|A) $$ $$ P(A|B)=\frac{P(A\cap B)}{P(B)} $$ $$ Bayes=\frac{P(B|A)P(A)}{P(B)} $$ $$ SE=\frac{\sigma}{\sqrt n} $$ $$ z=\frac{\bar{x}-\mu}{SE} $$ $$ CI=\bar{x}\pm z^*SE $$ $$ t=\frac{\bar{x}-\mu_0}{s/\sqrt n} $$
+Power=1−β
