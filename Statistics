@@ -1,0 +1,1124 @@
+📚 الخطة الكاملة
+
+الملف الأول: Descriptive Statistics 
+1-Introduction & Variables
+2-Frequency Tables
+3-Central Tendency
+4-Spread & Variability
+5-Distributions
+6-Summary & Applications
+7. Foundations of Inferential Statistics
+8. Probability Theory
+9. Bayes’ Theorem
+10. Central Limit Theorem
+11. Confidence Intervals
+12. Hypothesis Testing
+13. Regression
+
+1️⃣ يعني إيه Statistics؟
+
+Statistics = علم جمع وتحليل وتفسير وعرض البيانات.
+
+بمعنى بسيط:
+
+عندي Data → أرتبها → أحللها → أطلع منها Information تساعدني آخد Decision.
+
+والملف بيؤكد إن أهم فكرتين في Statistics هما:
+
+Uncertainty = عدم اليقين
+Variation = الاختلاف بين القيم
+
+لأن القيم مش كلها بتكون متساوية، والإحصاء بيساعدنا نفهم الاختلاف ده.
+
+2️⃣ Statistics في Data Science
+
+الإحصاء موجود تقريبًا في كل مراحل الـData Science:
+
+Collect → Clean → Describe → Analyze → Model → Decide
+
+مثلاً:
+
+Collect → نجمع البيانات
+Clean → نعالج Missing Values و Outliers
+Describe → Mean / Std / IQR
+Analyze → Distribution / Correlation / Hypothesis Tests
+Model → Regression / Classification / Clustering
+Decide → نطلع Insights و Predictions
+
+يعني الإحصاء مش مادة منفصلة عن الـData Science؛ هو جزء أساسي من طريقة تحليل البيانات.
+
+3️⃣ Population و Sample
+
+دي من أهم الحاجات جدًا.
+
+Population
+
+هي كل المجموعة اللي أنا عايز أدرسها.
+
+مثلاً:
+
+عايز أعرف متوسط درجات كل طلاب الجامعة.
+
+إذن:
+
+Population = كل طلاب الجامعة
+
+Sample
+
+هي جزء من الـPopulation.
+
+مثلاً:
+
+اخترت 500 طالب فقط.
+
+إذن:
+
+Sample = الـ500 طالب
+
+الفكرة:
+
+Population → Sample → Analysis
+
+والـInferential Statistics تستخدم الـSample عشان نستنتج معلومات عن الـPopulation.
+
+4️⃣ Variables
+
+Variable = أي خاصية أو قيمة ممكن يتم قياسها أو عدّها.
+
+أمثلة:
+
+Age
+Height
+Salary
+Temperature
+Gender
+Country
+Grade
+
+والملف يقسم الـVariables إلى قسمين رئيسيين:
+
+A) Numeric / Quantitative
+
+بيانات رقمية.
+
+Continuous
+
+ممكن تاخد أي قيمة داخل Range.
+
+مثلاً:
+
+Height = 175.3 cm
+
+Temperature = 36.7°C
+
+Discrete
+
+قيم صحيحة يتم عدّها.
+
+مثلاً:
+
+Number of children = 3
+
+Number of cars = 2
+
+إذن:
+
+Continuous → Measured
+Discrete → Counted
+
+B) Categorical / Qualitative
+
+بيانات عبارة عن Categories.
+
+Nominal
+
+Categories من غير ترتيب.
+
+مثلاً:
+
+Blood Type
+Eye Color
+Country
+Brand
+
+مين أكبر؟
+
+A ولا B؟
+
+السؤال أصلاً ملوش معنى هنا.
+
+Ordinal
+
+Categories فيها ترتيب.
+
+مثلاً:
+
+Small < Medium < Large
+
+أو:
+
+Poor < Good < Excellent
+
+إذن:
+
+Nominal = No Order
+Ordinal = Has Order
+
+🟢 5️⃣ Frequency Tables
+
+دلوقتي بعد ما فهمنا أنواع البيانات، نبدأ ننظم البيانات.
+
+Frequency Table بتقول:
+
+كل قيمة ظهرت كام مرة؟
+
+مثلاً:
+
+Data:
+
+55, 70, 70, 85, 90, 70, 55, 85, 90, 90
+
+نعمل:
+
+Score	Frequency
+55	2
+70	3
+85	2
+90	3
+Frequency
+
+عدد مرات ظهور القيمة.
+
+Relative Frequency
+
+النسبة:
+
+$$ Relative\ Frequency=\frac{Frequency}{Total} $$
+
+مثلاً 70:
+
+$$ \frac{3}{10}=30\% $$
+Cumulative Frequency
+
+نجمع الـFrequency تدريجيًا:
+
+2 → 5 → 7 → 10
+
+6️⃣ Central Tendency
+
+هنا عندنا 3 مقاييس مهمة جدًا:
+
+Mean
+
+المتوسط:
+
+$$ \bar{x}=\frac{\sum x_i}{n} $$
+
+مثلاً:
+
+4, 1, 7
+
+$$ Mean=\frac{4+1+7}{3}=4 $$
+Median
+
+القيمة الموجودة في المنتصف بعد ترتيب البيانات.
+
+1, 4, 7
+
+Median = 4
+
+ولو عدد القيم زوجي:
+
+ناخد متوسط القيمتين في المنتصف.
+
+Mode
+
+أكثر قيمة تكررت.
+
+مثلاً:
+
+4,2,4,3,2,2
+
+Mode = 2
+
+⭐ أهم نقطة: Outliers
+
+مثلاً:
+
+2, 4, 5, 5, 5, 6, 8
+
+تقريبًا:
+
+Mean = Median = Mode = 5
+
+لكن لو أضفنا:
+
+100
+
+هيبقى:
+
+Mean ≈ 16.9
+
+Median = 5
+
+Mode = 5
+
+يعني Mean اتشد جدًا بسبب الـOutlier، بينما Median تقريبًا لم يتأثر.
+
+لذلك:
+
+لو البيانات فيها Outliers:
+
+Median أفضل
+
+لو البيانات Symmetric ومفيهاش Outliers:
+
+Mean أفضل
+
+لو البيانات Categorical:
+
+Mode
+
+7️⃣ Spread & Variability
+
+دلوقتي عرفنا مركز البيانات.
+
+لكن سؤال مهم:
+
+البيانات قريبة من بعضها ولا متباعدة؟
+
+هنا نستخدم:
+
+Range
+Variance
+Standard Deviation
+IQR
+Range
+
+أسهل واحد:
+
+$$ Range=Maximum-Minimum $$
+
+مثلاً:
+
+3, 7, 7, 7, 19
+
+$$ Range=19-3=16 $$
+
+لكن مشكلته إنه Sensitive جدًا للـOutliers.
+
+8️⃣ Variance
+
+الـVariance بتقيس:
+
+القيم متباعدة قد إيه عن الـMean؟
+
+Population:
+
+$$ \sigma^2= \frac{\sum(x_i-\mu)^2}{N} $$
+
+Sample:
+
+$$ s^2= \frac{\sum(x_i-\bar{x})^2}{n-1} $$
+
+ليه بنعمل Square؟
+
+عشان الـDeviations ممكن تكون:
+
++3
+-3
+
+ولو جمعناهم هيلغوا بعض.
+
+فالـSquare يمنع الإلغاء.
+
+9️⃣ Standard Deviation
+
+ببساطة:
+
+$$ Std=\sqrt{Variance} $$
+
+الميزة المهمة:
+
+Standard Deviation بنفس وحدة البيانات.
+
+مثلاً لو البيانات بالكيلو:
+
+Variance → kg²
+Standard Deviation → kg
+
+مثال الملف:
+
+Data:
+
+2,4,4,4,5,5,7,9
+
+Mean:
+
+$$ 5 $$
+
+Variance:
+
+$$ 4 $$
+
+إذن:
+
+$$ Std=\sqrt4=2 $$
+
+يعني البيانات في المتوسط تبعد حوالي 2 units عن الـMean.
+
+🔟 IQR
+
+IQR مهم جدًا مع الـOutliers.
+
+$$ IQR=Q3-Q1 $$
+
+حيث:
+
+Q1 = 25%
+Q2 = Median = 50%
+Q3 = 75%
+
+والـIQR يحتوي على Middle 50% من البيانات.
+
+Outlier Rule
+
+القيمة تعتبر Outlier لو:
+
+$$ x<Q1-1.5(IQR) $$
+
+أو:
+
+$$ x>Q3+1.5(IQR) $$
+
+1️⃣1️⃣ Box Plot
+
+الـBox Plot بيلخص البيانات باستخدام:
+
+Minimum
+Q1
+Median
+Q3
+Maximum
+Outliers
+
+والـBox نفسه من:
+
+Q1 → Q3
+
+يعني يحتوي على Middle 50%.
+
+والـWhiskers تمتد للقيم التي تقع داخل حدود الـ1.5 IQR، والـOutliers تظهر كنقاط منفصلة.
+
+1️⃣2️⃣ Distributions
+
+هنا بنسأل:
+
+شكل البيانات عامل إزاي؟
+
+الملف يتناول أشكال مثل:
+
+Normal Distribution
+
+شكل Bell Curve.
+
+Positive / Right Skew
+
+الـTail ناحية اليمين.
+
+غالبًا:
+
+$$ Mode<Median<Mean $$
+
+مثال مهم جدًا:
+
+Salaries
+
+لأن معظم الناس رواتبهم متقاربة، لكن ممكن يكون فيه شخص راتبه ضخم جدًا.
+
+لذلك Median غالبًا أفضل من Mean.
+
+Bimodal
+
+عندك قمتين.
+
+وده ممكن يشير إلى وجود مجموعتين مختلفتين داخل البيانات.
+
+Uniform
+
+القيم تقريبًا لها نفس الاحتمال.
+
+1️⃣3️⃣ 68–95–99.7 Rule
+
+لو البيانات Normal:
+
+±1 Standard Deviation
+
+تقريبًا:
+
+68%
+
+±2 Standard Deviations
+
+تقريبًا:
+
+95%
+
+±3 Standard Deviations
+
+تقريبًا:
+
+99.7%
+
+مثال الملف:
+
+IQ:
+
+$$ \mu=100,\quad\sigma=15 $$
+
+من 85 إلى 115:
+
+68%
+
+من 70 إلى 130:
+
+95%
+
+من 55 إلى 145:
+
+99.7%
+
+🟣 الملف الأول في دقيقة
+
+احفظ التسلسل ده:
+
+Variable → Frequency → Center → Spread → Distribution
+
+يعني:
+
+أحدد نوع الـVariable.
+أعمل Frequency Table.
+أجيب Mean / Median / Mode.
+أقيس Spread باستخدام Range / Variance / Std / IQR.
+أحدد شكل Distribution.
+أشوف Outliers.
+أختار الـMeasure المناسب.
+
+وده تقريبًا نفس الـWorkflow الموجود في الملف.
+
+🔵 نبدأ الملف الثاني — Inferential Statistics
+
+الفكرة الأساسية:
+
+Population → Sample → Inference → Decision
+
+يعني عندي Population كبيرة، آخذ Sample، أحللها، وبعدها أعمل استنتاج عن الـPopulation.
+
+1️⃣4️⃣ Descriptive vs Inferential
+Descriptive
+
+بتوصف البيانات اللي عندك.
+
+مثلاً:
+
+متوسط درجات الـ40 طالب = 72
+
+Inferential
+
+بتستخدم الـSample عشان تستنتج حاجة عن Population أكبر.
+
+مثلاً:
+
+بناءً على الـSample، نقدر نقدر متوسط درجات كل الطلاب.
+
+1️⃣5️⃣ Sampling Methods
+
+الملف يشرح 6 أنواع:
+
+Simple Random
+
+كل شخص له فرصة متساوية.
+
+Systematic
+
+نختار كل k-th شخص.
+
+مثلاً:
+
+كل عاشر عميل.
+
+Stratified
+
+نقسم Population إلى Groups ثم نأخذ Sample من كل Group.
+
+مثلاً:
+
+18–30
+31–50
+51+
+Cluster
+
+نقسم إلى Clusters ونختار Clusters كاملة.
+
+Convenience
+
+نختار الناس الأسهل في الوصول إليهم.
+
+مشكلتها:
+
+Bias
+
+Purposive
+
+الباحث يختار أشخاصًا محددين بناءً على خبرته.
+
+🟡 1️⃣6️⃣ Probability
+
+Probability بتقيس:
+
+الحدث ده احتمال يحصل قد إيه؟
+
+$$ 0\leq P(E)\leq1 $$
+Sample Space
+
+كل النتائج الممكنة.
+
+Coin:
+
+{Heads, Tails}
+
+Die:
+
+{1,2,3,4,5,6}
+
+Event
+
+مجموعة نتائج نهتم بها.
+
+مثلاً:
+
+Even number:
+
+{2,4,6}
+
+$$ P(E)=\frac36=0.5 $$
+Complement
+
+الحدث الذي لم يحدث:
+
+$$ P(E^c)=1-P(E) $$
+
+1️⃣7️⃣ Addition Rule
+
+لما السؤال يقول:
+
+A OR B
+
+نستخدم:
+
+$$ P(A\cup B) = P(A)+P(B)-P(A\cap B) $$
+
+ليه بنطرح الـIntersection؟
+
+لأن الجزء المشترك اتحسب مرتين.
+
+مثال الملف:
+
+King OR Heart:
+
+$$ P(King)=\frac4{52} $$ $$ P(Heart)=\frac{13}{52} $$
+
+Intersection:
+
+King of Hearts:
+
+$$ \frac1{52} $$
+
+إذن:
+
+$$ P(King\ OR\ Heart)=0.308 $$
+
+أي:
+
+30.8%
+
+1️⃣8️⃣ Multiplication Rule
+
+لما السؤال يقول:
+
+A AND B
+
+نستخدم:
+
+$$ P(A\cap B)=P(A)\times P(B|A) $$
+
+ولو Independent:
+
+$$ P(A\cap B)=P(A)P(B) $$
+
+يعني لازم تسأل:
+
+هل حدوث A يغير احتمال B؟
+
+لو نعم:
+
+Dependent
+
+لو لا:
+
+Independent
+
+1️⃣9️⃣ Conditional Probability
+
+يعني:
+
+احتمال A بشرط إن B حصل.
+
+$$ P(A|B)= \frac{P(A\cap B)}{P(B)} $$
+
+مثال الملف:
+
+عندنا معاملات تم وضع Flag لها.
+
+عايزين:
+
+احتمال إنها Fraud بشرط إنها Flagged.
+
+النتيجة:
+
+$$ P(Fraud|Flagged)=20\% $$
+
+🔴 2️⃣0️⃣ Bayes' Theorem
+
+دي من أهم أجزاء الملف.
+
+Bayes بتجاوب على:
+
+لما أشوف Evidence جديد، أغيّر اعتقادي إزاي؟
+
+المعادلة:
+
+$$ P(A|B)= \frac{P(B|A)P(A)} {P(B)} $$
+
+احفظ:
+
+Posterior = Likelihood × Prior ÷ Evidence
+
+Prior
+
+اعتقادي قبل الـEvidence.
+
+Likelihood
+
+احتمال الـEvidence لو A صحيحة.
+
+Posterior
+
+اعتقادي بعد رؤية الـEvidence.
+
+⭐ مثال Bayes المهم
+
+الملف يستخدم مثال Medical Test:
+
+Disease prevalence = 1%
+
+والاختبار:
+
+Sensitivity = 99%
+Specificity = 99%
+
+الشخص عمل Test وطلع Positive.
+
+قد تتوقع:
+
+إذن عنده المرض بنسبة 99%.
+
+لكن لا.
+
+باستخدام Bayes:
+
+$$ P(Sick|Test+)=50\% $$
+
+يعني رغم أن الاختبار دقته عالية جدًا، الـPosterior هنا 50% فقط بسبب أن المرض نادر أصلًا.
+
+2️⃣1️⃣ Bayes في Machine Learning
+
+Bayes مش مجرد قانون.
+
+الملف يربطه بـ:
+
+Naive Bayes
+Bayesian Inference
+Posterior Distributions
+Bayesian Optimization
+Recommendation Systems
+Bayesian A/B Testing
+
+مثلاً Naive Bayes يستخدم في:
+
+Spam Detection
+Sentiment Analysis
+Document Classification
+
+🟢 2️⃣2️⃣ Central Limit Theorem — CLT
+
+دي من أهم النظريات في Statistics.
+
+الفكرة:
+
+لو أخذت Samples كبيرة من أي Population تقريبًا، فإن Distribution الخاصة بالـSample Means تصبح تقريبًا Normal.
+
+والملف يستخدم:
+
+$$ \bar{x}\sim N \left( \mu,\frac{\sigma^2}{n} \right) $$
+
+وغالبًا:
+
+$$ n\geq30 $$
+
+قاعدة تقريبية.
+
+والـStandard Error:
+
+$$ SE=\frac{\sigma}{\sqrt n} $$
+
+لماذا CLT مهم؟
+
+لأنه يسمح لنا باستخدام أدوات الـNormal Distribution حتى لو الـPopulation الأصلية:
+
+Skewed
+Uniform
+Bimodal
+
+ومن هنا نقدر نعمل:
+
+Z-scores
+Confidence Intervals
+Hypothesis Testing
+
+🟠 2️⃣3️⃣ Confidence Intervals
+
+الـConfidence Interval هو:
+
+Range نستخدمه لتقدير Parameter مجهول.
+
+مثلاً:
+
+بدل ما أقول:
+
+Mean = 7.8
+
+أقول:
+
+95% CI = 7.51 إلى 8.09
+
+لو σ معلومة:
+$$ CI= \bar{x} \pm z^* \frac{\sigma}{\sqrt n} $$
+لو σ غير معلومة:
+$$ CI= \bar{x} \pm t^* \frac{s}{\sqrt n} $$
+
+⭐ أهم نقطة في Confidence Interval
+
+غلط تقول:
+
+يوجد احتمال 95% أن الـMean داخل الـInterval.
+
+التفسير الصحيح حسب الملف:
+
+لو كررنا عملية أخذ الـSamples وبناء الـIntervals مرات كثيرة، حوالي 95% من الـIntervals الناتجة ستحتوي على الـTrue Population Mean.
+
+2️⃣4️⃣ Hypothesis Testing
+
+هنا السؤال:
+
+هل النتيجة اللي شفتها حقيقية فعلًا أم ممكن تكون حصلت بالصدفة؟
+
+عندنا:
+
+H0 — Null Hypothesis
+
+الافتراض الأساسي.
+
+غالبًا:
+
+No effect / No difference
+
+مثلاً:
+
+$$ H_0:\mu=50 $$
+H1 — Alternative Hypothesis
+
+اللي بنحاول نثبت وجوده.
+
+مثلاً:
+
+$$ H_1:\mu\neq50 $$
+
+أو:
+
+$$ H_1:\mu>50 $$
+
+أو:
+
+$$ H_1:\mu<50 $$
+
+2️⃣5️⃣ p-value
+
+دي نقطة مهمة جدًا.
+
+p-value:
+
+احتمال الحصول على نتيجة مساوية أو أكثر تطرفًا من النتيجة التي رأيناها، بافتراض أن H0 صحيحة.
+
+لو:
+
+$$ p<\alpha $$
+
+نرفض:
+
+$$ H_0 $$
+
+ولو:
+
+$$ p\geq\alpha $$
+
+نعمل:
+
+Fail to Reject H0
+
+ومهم جدًا:
+
+p-value ليست احتمال أن H0 صحيحة.
+
+2️⃣6️⃣ Type I & Type II Errors
+Type I Error
+
+رفض H0 وهي أصلًا صحيحة.
+
+يعني:
+
+False Positive
+
+ويرمز لها:
+
+$$ \alpha $$
+Type II Error
+
+عدم رفض H0 وهي خاطئة.
+
+يعني:
+
+False Negative
+
+ويرمز لها:
+
+$$ \beta $$
+
+والـPower:
+
+$$ Power=1-\beta $$
+
+وزيادة Sample Size تساعد في تقليل β وزيادة Power.
+
+2️⃣7️⃣ Z-test vs T-test
+Z-test
+
+نستخدمه عندما:
+
+Population σ معروفة
+وغالبًا Sample كبيرة
+أو حسب شروط المسألة في الملف
+
+المعادلة:
+
+$$ z= \frac{\bar{x}-\mu_0} {\sigma/\sqrt n} $$
+T-test
+
+لما:
+
+σ غير معروفة
+نستخدم Sample Standard Deviation \(s\)
+خصوصًا مع Samples صغيرة
+$$ t= \frac{\bar{x}-\mu_0} {s/\sqrt n} $$
+
+والـDegrees of Freedom:
+
+$$ df=n-1 $$
+
+2️⃣8️⃣ خطوات Hypothesis Test
+
+احفظ الخمس خطوات دي:
+
+01 — State H0 & H1
+02 — Choose α
+
+غالبًا:
+
+$$ \alpha=0.05 $$
+03 — Calculate Test Statistic
+
+Z أو T.
+
+04 — Find p-value أو Critical Value
+05 — Decision + Business Interpretation
+
+يعني متقولش فقط:
+
+Reject H0
+
+لكن قول النتيجة بمعناها العملي.
+
+2️⃣9️⃣ Regression
+
+آخر جزء في الملف.
+
+Regression تستخدم في حاجتين:
+
+Inference
+
+نفهم العلاقة بين المتغيرات.
+
+Prediction
+
+نتوقع Y بناءً على X.
+
+Simple Linear Regression:
+
+$$ \hat y=\beta_0+\beta_1X+\epsilon $$
+
+حيث:
+
+β₀ = Intercept
+β₁ = Slope
+ε = Error
+
+والـβ₁ بتقول لنا:
+
+لما X تزيد وحدة واحدة، Y تتغير بمقدار β₁.
+
+3️⃣0️⃣ أسئلة Regression الثلاثة
+هل توجد علاقة؟
+
+نختبر:
+
+$$ H_0:\beta_1=0 $$
+
+لو:
+
+$$ p<0.05 $$
+
+في الملف نعتبر أن هناك دليلًا على أن X تتنبأ بـY.
+
+العلاقة قوية قد إيه؟
+
+نستخدم:
+
+$$ R^2 $$
+
+مثلاً:
+
+$$ R^2=0.72 $$
+
+يعني X تفسر حوالي 72% من Variation في Y وفق صياغة الملف.
+
+ما قيمة Prediction؟
+
+نستخدم:
+
+$$ \hat y=\beta_0+\beta_1X $$
+
+3️⃣1️⃣ أنواع Regression الموجودة في الملف
+النوع	الاستخدام
+Simple Linear	Predictor واحد + Outcome مستمر
+Multiple Linear	عدة Predictors
+Logistic	Outcome ثنائي Yes/No
+Polynomial	علاقة Non-linear
+Ridge	تقليل Overfitting
+Lasso	تقليل Overfitting واختيار Features
+Poisson	Count Data
+
+مثلاً:
+
+Logistic Regression
+
+تستخدم للتنبؤ:
+
+Churn = Yes / No
+
+أما:
+
+Poisson Regression
+
+فتناسب أعدادًا مثل:
+
+Number of support tickets per day
+
+🔥 الخريطة النهائية للملفين
+
+احفظها بالشكل ده:
+
+STATISTICS
+│
+├── DESCRIPTIVE
+│   │
+│   ├── Variables
+│   │   ├── Numeric
+│   │   │   ├── Continuous
+│   │   │   └── Discrete
+│   │   └── Categorical
+│   │       ├── Nominal
+│   │       └── Ordinal
+│   │
+│   ├── Frequency
+│   │   ├── Frequency
+│   │   ├── Relative Frequency
+│   │   └── Cumulative Frequency
+│   │
+│   ├── Central Tendency
+│   │   ├── Mean
+│   │   ├── Median
+│   │   └── Mode
+│   │
+│   ├── Spread
+│   │   ├── Range
+│   │   ├── Variance
+│   │   ├── Std
+│   │   └── IQR
+│   │
+│   └── Distribution
+│       ├── Normal
+│       ├── Skewed
+│       ├── Bimodal
+│       └── Uniform
+│
+└── INFERENTIAL
+    │
+    ├── Population / Sample
+    ├── Sampling
+    ├── Probability
+    │   ├── Addition
+    │   ├── Multiplication
+    │   └── Conditional
+    │
+    ├── Bayes
+    │
+    ├── CLT
+    │
+    ├── Confidence Interval
+    │
+    ├── Hypothesis Testing
+    │   ├── H0 / H1
+    │   ├── Alpha
+    │   ├── p-value
+    │   ├── Type I
+    │   ├── Type II
+    │   ├── Z-test
+    │   └── T-test
+    │
+    └── Regression
+        ├── Linear
+        ├── Multiple
+        ├── Logistic
+        ├── Polynomial
+        ├── Ridge / Lasso
+        └── Poisson
